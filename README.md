@@ -1,4 +1,4 @@
 ## 설치 목록
 
-- [ ] react-router-dom
+- [x] react-router-dom
 - [ ] styled-components
