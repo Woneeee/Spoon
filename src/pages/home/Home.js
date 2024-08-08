@@ -4,6 +4,9 @@ import { Title } from "../../components/Title";
 import styled from "styled-components";
 import bg from "../../img/a.jpg";
 import { FaUtensilSpoon } from "react-icons/fa";
+import { useForm } from "react-hook-form";
+import { MdLocationOn } from "react-icons/md";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const MainBanner = styled.div`
   width: 100%;
@@ -15,7 +18,7 @@ const MainBanner = styled.div`
   background-image: url(${bg});
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
 
   display: flex;
   justify-content: center;
@@ -28,7 +31,7 @@ const Bg = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(17, 17, 17, 0.3);
+  background-color: rgba(17, 17, 17, 0.4);
   -webkit-tap-highlight-color: transparent;
 `;
 
@@ -55,7 +58,35 @@ const Discover = styled.div`
   }
 `;
 
-const Form = styled.form``;
+const Form = styled.form`
+  all: unset;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  font-size: 17px;
+  background-color: white;
+  position: relative;
+  border-radius: 8px;
+`;
+
+const Location = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    all: unset;
+    border-right: 1px solid rgba(17, 17, 17, 0.2);
+  }
+`;
+
+const Restaurant = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    all: unset;
+  }
+`;
 
 export const Home = () => {
   const [resData, setResData] = useState();
@@ -78,6 +109,14 @@ export const Home = () => {
     })();
   }, []);
 
+  console.log(resData);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm();
+
   return (
     <>
       <MainBanner>
@@ -98,7 +137,17 @@ export const Home = () => {
             <p>Discover the best restaurant and cafe in Gyeongju</p>
           </Discover>
 
-          <Form></Form>
+          <Form>
+            <Location>
+              <MdLocationOn />
+              <input type="text" placeholder="Dong name" />
+            </Location>
+
+            <Restaurant>
+              <AiOutlineSearch />
+              <input type="text" placeholder="Restaurant name" />
+            </Restaurant>
+          </Form>
         </Brand>
       </MainBanner>
     </>

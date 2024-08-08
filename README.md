@@ -6,3 +6,4 @@
 - [x] node-fetch 2.7v
 - [x] styled-reset
 - [x] Google-Fonts
+- [x] react-hook-form
