@@ -9,7 +9,7 @@ const SHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 20px ${spacing.side};
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 99;
