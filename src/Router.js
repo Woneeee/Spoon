@@ -6,11 +6,13 @@ import { Footer } from "./components/Footer";
 import { Detail } from "./pages/detail/Detail";
 import { PageNotFound } from "./pages/PageNotFound";
 import { Search } from "./pages/search/Search";
+import { ScrollTopBtn } from "./components/ScrollTopBtn";
 
 const Router = () => {
   return (
     <HashRouter>
       <Header />
+      <ScrollTopBtn />
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />

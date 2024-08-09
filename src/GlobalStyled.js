@@ -5,6 +5,10 @@ export const spacing = {
   side: "470px",
 };
 
+export const point = {
+  color: "#c4f073",
+};
+
 export const GlobalStyled = createGlobalStyle`
     ${reset}
 
