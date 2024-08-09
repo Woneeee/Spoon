@@ -7,3 +7,4 @@
 - [x] styled-reset
 - [x] Google-Fonts
 - [x] react-hook-form
+- [x] react-spinners

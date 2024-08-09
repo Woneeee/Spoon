@@ -5,6 +5,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Detail } from "./pages/detail/Detail";
 import { PageNotFound } from "./pages/PageNotFound";
+import { Search } from "./pages/search/Search";
 
 const Router = () => {
   return (
@@ -13,6 +14,7 @@ const Router = () => {
       <Routes>
         <Route path={routes.home} element={<Home />} />
         <Route path={routes.detail} element={<Detail />} />
+        <Route path={routes.search} element={<Search />} />
         <Route path={"/*"} element={<PageNotFound />} />
       </Routes>
       <Footer />
