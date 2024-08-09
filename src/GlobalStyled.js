@@ -13,7 +13,7 @@ export const GlobalStyled = createGlobalStyle`
     ${reset}
 
     *{
-      box-sizing: border-box; //진짜 개~~중요
+      box-sizing: border-box; 
     }
 
     body{

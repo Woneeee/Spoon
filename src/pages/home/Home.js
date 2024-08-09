@@ -122,7 +122,6 @@ const SearchIcon = styled.div`
 
 const DinCafe = styled.div`
   width: 100%;
-  /* background-color: pink; */
   padding: 0 ${spacing.side};
   margin-bottom: 85px;
 `;
@@ -130,7 +129,6 @@ const DinCafe = styled.div`
 const Wrap = styled.ul`
   width: 100%;
   height: 100%;
-  /* background-color: gray; */
   display: flex;
   justify-content: space-between;
 
@@ -168,7 +166,6 @@ const Text = styled.div`
 
 const Collection = styled.div`
   width: 100%;
-  /* background-color: pink; */
   padding: 0 ${spacing.side};
 `;
 
@@ -188,11 +185,9 @@ const Container = styled.div`
 const ConWrap = styled.ul`
   width: 100%;
   height: 360px;
-  /* background-color: gray; */
   li {
     width: 28%;
     height: 100%;
-    /* background-color: lightcyan; */
     border-radius: 15px;
     position: relative;
     h2 {
@@ -235,7 +230,26 @@ export const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const { register, handleSubmit } = useForm();
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const {
+          response: {
+            body: {
+              items: { item: resResult },
+            },
+          },
+        } = await restaurant();
+
+        setResData(resResult);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   // console.log(resData);
+
   const [sortId, setSortId] = useState();
 
   const searchHandler = ({ sort }) => {
@@ -298,6 +312,8 @@ export const Home = () => {
           </Form>
         </Brand>
       </MainBanner>
+
+      {/* ------------------------------------------------------------------------------------------------------ */}
 
       <DinCafe>
         <Wrap>
