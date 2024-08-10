@@ -9,6 +9,7 @@ import { TbBowlSpoonFilled } from "react-icons/tb";
 import { Link, useNavigate } from "react-router-dom";
 import { point } from "../../GlobalStyled";
 import { routes } from "../../routes";
+import { HomeHeader } from "./components/HomeHeader";
 
 const MainBanner = styled.div`
   width: 100%;
@@ -276,6 +277,8 @@ export const Home = () => {
 
   return (
     <>
+      <HomeHeader />
+
       <MainBanner>
         <Bg />
 

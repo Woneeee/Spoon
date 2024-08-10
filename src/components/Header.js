@@ -1,79 +1,153 @@
-import { useEffect, useState } from "react";
-import { restaurant } from "../api";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import { FaMobileAlt } from "react-icons/fa";
-import { spacing } from "../GlobalStyled";
+import { point } from "../GlobalStyled";
+import { TbBowlSpoonFilled } from "react-icons/tb";
+import { MdLocationOn } from "react-icons/md";
+import { AiOutlineSearch } from "react-icons/ai";
+import { Link, useNavigate } from "react-router-dom";
+import { routes } from "../routes";
 
-const SHeader = styled.div`
+const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
   padding: 20px 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 99;
 `;
 
-const HeaderCon = styled.div`
+const Wrap = styled.div`
   max-width: 1100px;
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+`;
+
+const Logo = styled.div`
+  font-size: 35px;
+  font-weight: 800;
+  letter-spacing: -2px;
+`;
+
+const Form = styled.form`
+  width: 65%;
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #66666630;
+  box-shadow: rgba(28, 28, 28, 0.08) 0px 2px 8px;
+  .loc {
+    all: unset;
+    width: 25%;
+    border-right: 1px solid #66666630;
+    font-weight: 500; //400 이 기본
+    font-size: 15px;
+  }
+  .sort {
+    all: unset;
+    width: 60%;
+    &::placeholder {
+      font-style: italic;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: 0.8;
+    }
+  }
   button {
     all: unset;
-    cursor: pointer;
-    color: white;
-    font-size: 16px;
-    font-weight: 400;
+    width: 15%;
+    height: 36px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: ${point.color};
+    &:hover {
+      background-color: #9cc05c;
+      transition-duration: 0.3s;
+    }
   }
+`;
+
+const LocIcon = styled.div`
+  margin-left: 10px;
+  margin-right: 15px;
+  font-size: 20px;
+`;
+
+const SearchIcon = styled.div`
+  margin-left: 18px;
+  margin-right: 15px;
+  font-size: 20px;
 `;
 
 const User = styled.ul`
   display: flex;
-  color: white;
   li {
-    margin-left: 30px;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 17px;
     cursor: pointer;
+    &:nth-child(2) {
+      margin-left: 30px;
+    }
   }
 `;
 
 export const Header = () => {
-  const [resData, setResData] = useState();
+  const { register, handleSubmit } = useForm();
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const {
-          response: {
-            body: {
-              items: { item: resResult },
-            },
-          },
-        } = await restaurant();
-
-        setResData(resResult);
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-  }, []);
+  const navi = useNavigate();
+  const searchHandler = ({ sort }) => {
+    if (sort === "한식") {
+      navi("/search/1001");
+    } else if (sort === "양식") {
+      navi("/search/1000");
+    } else if (sort === "일식") {
+      navi("/search/1002");
+    } else if (sort === "중식") {
+      navi("/search/1003");
+    }
+  };
 
   return (
-    <SHeader>
-      <HeaderCon>
-        <button>
-          <FaMobileAlt />
-          &nbsp;&nbsp;&nbsp;Get the App
-        </button>
+    <Container>
+      <Wrap>
+        <Link to={routes.home}>
+          <Logo>
+            Spoon&nbsp;
+            <TbBowlSpoonFilled
+              style={{
+                backgroundColor: point.color,
+                borderRadius: "10px",
+                color: point.deepcolor,
+              }}
+            />
+          </Logo>
+        </Link>
+
+        <Form onSubmit={handleSubmit(searchHandler)}>
+          <LocIcon>
+            <MdLocationOn />
+          </LocIcon>
+          <input className="loc" type="text" value="경주" readOnly></input>
+
+          <SearchIcon>
+            <AiOutlineSearch />
+          </SearchIcon>
+          <input
+            {...register("sort", {
+              required: false,
+            })}
+            className="sort"
+            type="text"
+            placeholder="한식, 양식, 일식, 중식..."
+          />
+
+          <button>Search</button>
+        </Form>
 
         <User>
           <li>Log in</li>
           <li>Sign up</li>
         </User>
-      </HeaderCon>
-    </SHeader>
+      </Wrap>
+    </Container>
   );
 };

@@ -13,7 +13,6 @@ import { Cafe } from "./pages/dining&cafe/Cafe";
 const Router = () => {
   return (
     <HashRouter>
-      <Header />
       <ScrollTopBtn />
       <Routes>
         <Route path={routes.home} element={<Home />} />

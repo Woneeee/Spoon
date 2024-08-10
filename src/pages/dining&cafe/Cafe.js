@@ -1,3 +1,9 @@
+import { Header } from "../../components/Header";
+
 export const Cafe = () => {
-  return <div>Cafe</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
