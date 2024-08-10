@@ -1,15 +1,12 @@
 import { useEffect, useState } from "react";
 import { restaurant } from "../../api";
-import { Title } from "../../components/Title";
 import styled from "styled-components";
 import bg from "../../img/d.jpg";
 import { useForm } from "react-hook-form";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 import { TbBowlSpoonFilled } from "react-icons/tb";
-import { Link } from "react-router-dom";
-import { routes } from "../../routes";
-import { Loading } from "../../components/Loading";
+import { Link, useNavigate } from "react-router-dom";
 import { point } from "../../GlobalStyled";
 
 const MainBanner = styled.div`
@@ -254,17 +251,17 @@ export const Home = () => {
 
   console.log(resData);
 
-  const [sortId, setSortId] = useState();
-
+  const navi = useNavigate();
   const searchHandler = ({ sort }) => {
+    // Link 태그와 비슷하고 페이지를 직접 선택하여 바꿀수있게 해줌
     if (sort === "한식") {
-      setSortId(1001);
+      navi("/search/1001");
     } else if (sort === "양식") {
-      setSortId(1000);
+      navi("/search/1000");
     } else if (sort === "일식") {
-      setSortId(1002);
+      navi("/search/1002");
     } else if (sort === "중식") {
-      setSortId(1003);
+      navi("/search/1003");
     }
   };
 
@@ -311,9 +308,7 @@ export const Home = () => {
               />
             </Restaurant>
 
-            <Link to={`/search/${sortId && sortId}`}>
-              <button>Search</button>
-            </Link>
+            <button>Search</button>
           </Form>
         </Brand>
       </MainBanner>
