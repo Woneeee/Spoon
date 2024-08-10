@@ -7,13 +7,19 @@ import { spacing } from "../GlobalStyled";
 const SHeader = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  padding: 20px ${spacing.side};
+  justify-content: center;
+  padding: 20px 0;
   position: absolute;
   top: 0;
   left: 0;
   z-index: 99;
+`;
 
+const HeaderCon = styled.div`
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
   button {
     all: unset;
     cursor: pointer;
@@ -57,15 +63,17 @@ export const Header = () => {
 
   return (
     <SHeader>
-      <button>
-        <FaMobileAlt />
-        &nbsp;&nbsp;&nbsp;Get the App
-      </button>
+      <HeaderCon>
+        <button>
+          <FaMobileAlt />
+          &nbsp;&nbsp;&nbsp;Get the App
+        </button>
 
-      <User>
-        <li>Log in</li>
-        <li>Sign up</li>
-      </User>
+        <User>
+          <li>Log in</li>
+          <li>Sign up</li>
+        </User>
+      </HeaderCon>
     </SHeader>
   );
 };

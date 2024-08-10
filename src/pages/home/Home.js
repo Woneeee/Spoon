@@ -10,7 +10,7 @@ import { TbBowlSpoonFilled } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { routes } from "../../routes";
 import { Loading } from "../../components/Loading";
-import { spacing } from "../../GlobalStyled";
+import { point } from "../../GlobalStyled";
 
 const MainBanner = styled.div`
   width: 100%;
@@ -33,7 +33,6 @@ const Bg = styled.div`
   top: 0;
   left: 0;
   background-color: rgba(17, 17, 17, 0.4);
-  -webkit-tap-highlight-color: transparent;
 `;
 
 const Brand = styled.div`
@@ -56,6 +55,8 @@ const Discover = styled.div`
     color: white;
     position: relative;
     line-height: 48px;
+    letter-spacing: 0.6px;
+    text-align: center;
   }
 `;
 
@@ -86,7 +87,6 @@ const Form = styled.form`
 
 const Location = styled.div`
   display: flex;
-  align-items: center;
   margin-right: 15px;
   input {
     all: unset;
@@ -105,7 +105,6 @@ const LocIcon = styled.div`
 
 const Restaurant = styled.div`
   display: flex;
-  align-items: center;
   input {
     all: unset;
     &::placeholder {
@@ -122,11 +121,13 @@ const SearchIcon = styled.div`
 
 const DinCafe = styled.div`
   width: 100%;
-  padding: 0 ${spacing.side};
+  display: flex;
+  justify-content: center;
   margin-bottom: 85px;
 `;
 
 const Wrap = styled.ul`
+  max-width: 1100px;
   width: 100%;
   height: 100%;
   display: flex;
@@ -166,10 +167,13 @@ const Text = styled.div`
 
 const Collection = styled.div`
   width: 100%;
-  padding: 0 ${spacing.side};
+  display: flex;
+  justify-content: center;
 `;
 
 const Container = styled.div`
+  max-width: 1100px;
+  width: 100%;
   h2 {
     font-size: 36px;
     font-weight: 500;
@@ -184,7 +188,7 @@ const Container = styled.div`
 
 const ConWrap = styled.ul`
   width: 100%;
-  height: 360px;
+  height: 380px;
   li {
     width: 28%;
     height: 100%;
@@ -248,7 +252,7 @@ export const Home = () => {
     })();
   }, []);
 
-  // console.log(resData);
+  console.log(resData);
 
   const [sortId, setSortId] = useState();
 
@@ -274,9 +278,10 @@ export const Home = () => {
             Spoon&nbsp;
             <TbBowlSpoonFilled
               style={{
-                backgroundColor: "#c4f073",
+                backgroundColor: point.color,
                 borderRadius: "20px",
                 fontSize: "60px",
+                color: point.deepcolor,
               }}
             />
           </h2>
@@ -302,7 +307,7 @@ export const Home = () => {
                   required: false,
                 })}
                 type="text"
-                placeholder="양식, 한식, 일식, 중식..."
+                placeholder="한식, 양식, 일식, 중식..."
               />
             </Restaurant>
 
@@ -347,7 +352,7 @@ export const Home = () => {
       <Collection>
         <Container>
           <h2>Collection</h2>
-          <p>Find top restaurant and cafes in Gyeongju based on Trends</p>
+          <p>Find top restaurants and cafes in Gyeongju based on Trends</p>
 
           <ConWrap>
             <li>

@@ -7,6 +7,7 @@ export const spacing = {
 
 export const point = {
   color: "#c4f073",
+  deepcolor: "#3a3d",
 };
 
 export const GlobalStyled = createGlobalStyle`
