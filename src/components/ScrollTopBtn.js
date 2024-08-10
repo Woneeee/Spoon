@@ -13,7 +13,13 @@ const TopBtn = styled.div`
   cursor: pointer;
 `;
 
-const btnHandler = () => {};
+const btnHandler = () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+};
 
 export const ScrollTopBtn = () => {
   return (

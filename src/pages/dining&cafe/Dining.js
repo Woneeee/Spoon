@@ -4,10 +4,12 @@ import { Header } from "../../components/Header";
 import { MdOutlineLocalDining } from "react-icons/md";
 import { IoMdCafe } from "react-icons/io";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { routes } from "../../routes";
 import { Loading } from "../../components/Loading";
 import { IMG_BASE_URL } from "../../constant/imgUrl";
+import { useScrollTop } from "../../lib/useScrollTop";
+import { point } from "../../GlobalStyled";
 
 const MenuCon = styled.section`
   margin-top: 30px;
@@ -29,6 +31,9 @@ const MenuWrap = styled.ul`
     margin-right: 50px;
     font-size: 22px;
     font-weight: 500;
+    &:nth-child(1) {
+      border-bottom: 3px solid ${point.deepcolor};
+    }
   }
 `;
 
@@ -42,6 +47,7 @@ const DinIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  color: crimson;
 `;
 
 const CafIcon = styled.div`
@@ -75,6 +81,7 @@ const CollWrap = styled.div`
     margin-top: 40px;
     opacity: 0.7;
     font-size: 18px;
+    letter-spacing: 0.3px;
   }
 `;
 
@@ -88,11 +95,11 @@ const CollCon = styled.ul`
     height: 100%;
     img {
       height: 100%;
-      border-radius: 13px;
+      border-radius: 12px;
       object-fit: cover;
     }
     h2 {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 400;
       position: absolute;
       left: 15px;
@@ -140,7 +147,7 @@ const ResWrap = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
-  row-gap: 40px;
+  row-gap: 35px;
 `;
 
 const Con = styled.div`
@@ -186,6 +193,8 @@ export const Dining = () => {
   const [resData, setResData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
+  useScrollTop();
+
   useEffect(() => {
     (async () => {
       try {
@@ -205,7 +214,7 @@ export const Dining = () => {
     })();
   }, []);
 
-  console.log(resData);
+  // console.log(resData);
 
   return (
     <>
@@ -220,7 +229,7 @@ export const Dining = () => {
               <DinIcon>
                 <MdOutlineLocalDining />
               </DinIcon>
-              <p>Dining</p>
+              <p style={{ color: point.deepcolor }}>Dining</p>
             </Link>
           </li>
           <li>
@@ -255,14 +264,14 @@ export const Dining = () => {
         </CollWrap>
       </CollContainer>
 
-      {/* ------------------------------------------------------------------------- */}
+      {/* -------------------------------------------------------------------------------------- */}
 
       {isLoading ? (
         <Loading />
       ) : (
         <DinContainer>
           <DinWrap>
-            <h2>Trending dining restaurants in South Korea Gyeongju</h2>
+            <h2>Trending dining restaurants in South Korea Gyeongju 😊</h2>
 
             <ResWrap>
               {resData.map((data) => (

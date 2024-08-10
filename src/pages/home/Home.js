@@ -191,6 +191,7 @@ const Container = styled.div`
     margin-bottom: 40px;
     font-size: 17px;
     opacity: 0.7;
+    letter-spacing: 0.3px;
   }
 `;
 
