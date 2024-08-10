@@ -8,6 +8,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { TbBowlSpoonFilled } from "react-icons/tb";
 import { Link, useNavigate } from "react-router-dom";
 import { point } from "../../GlobalStyled";
+import { routes } from "../../routes";
 
 const MainBanner = styled.div`
   width: 100%;
@@ -73,12 +74,17 @@ const Form = styled.form`
     width: 100px;
     height: 65%;
     background-color: #c4f073;
+    font-weight: 500;
     border-radius: 8px;
     text-align: center;
     position: absolute;
     right: 10px;
-    top: 10px;
+    top: 11px;
     cursor: pointer;
+    &:hover {
+      background-color: #9cc05c;
+      transition-duration: 0.3s;
+    }
   }
 `;
 
@@ -136,6 +142,10 @@ const Wrap = styled.ul`
     border: 1px solid #88888835;
 
     border-radius: 17px;
+    &:hover {
+      transform: scale(1.03);
+      transition-duration: 0.5s;
+    }
   }
 `;
 
@@ -228,7 +238,6 @@ const ConBg = styled.div`
 
 export const Home = () => {
   const [resData, setResData] = useState();
-  const [isLoading, setIsLoading] = useState(true);
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
@@ -318,31 +327,38 @@ export const Home = () => {
       <DinCafe>
         <Wrap>
           <li>
-            <ImgBox>
-              <img
-                src="https://images.unsplash.com/photo-1573225342350-16731dd9bf3d?q=80&w=2562&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="dining"
-              />
-            </ImgBox>
-            <Text>
-              <h2>Dining</h2>
-              <p>Visit the city's best dining venues</p>
-            </Text>
+            <Link to={routes.dining}>
+              <ImgBox>
+                <img
+                  src="https://images.unsplash.com/photo-1573225342350-16731dd9bf3d?q=80&w=2562&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="dining"
+                />
+              </ImgBox>
+              <Text>
+                <h2>Dining</h2>
+                <p>Visit the city's best dining venues</p>
+              </Text>
+            </Link>
           </li>
+
           <li>
-            <ImgBox>
-              <img
-                src="https://images.unsplash.com/photo-1631206616601-79af875341d4?q=80&w=2525&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt="cafe"
-              />
-            </ImgBox>
-            <Text>
-              <h2>Cafe</h2>
-              <p>Explore the city's best cafes </p>
-            </Text>
+            <Link to={routes.cafe}>
+              <ImgBox>
+                <img
+                  src="https://images.unsplash.com/photo-1631206616601-79af875341d4?q=80&w=2525&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="cafe"
+                />
+              </ImgBox>
+              <Text>
+                <h2>Cafe</h2>
+                <p>Explore the city's best cafes </p>
+              </Text>
+            </Link>
           </li>
         </Wrap>
       </DinCafe>
+
+      {/* ---------------------------------------------------------------------------------------------*/}
 
       <Collection>
         <Container>
