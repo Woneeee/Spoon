@@ -12,7 +12,7 @@ const Wrap = styled.div`
 export const Loading = () => {
   return (
     <Wrap>
-      <ClipLoader />
+      <ClipLoader size={80} />
     </Wrap>
   );
 };

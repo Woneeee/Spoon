@@ -204,6 +204,7 @@ const ConWrap = styled.ul`
     position: relative;
     h2 {
       font-size: 18px;
+      font-weight: 400;
       position: absolute;
       left: 15px;
       bottom: 15px;
@@ -218,7 +219,7 @@ const ConImg = styled.div`
   img {
     height: 100%;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 13px;
   }
 `;
 
