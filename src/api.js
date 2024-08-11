@@ -14,3 +14,8 @@ export const cafe = () =>
   fetch(
     `${baseUrl}cafeInfoService/getCafeInfo?serviceKey=${serviceKey}&pageNo=1&numOfRows=100`
   ).then((res) => res.json());
+
+export const hot = () =>
+  fetch(
+    `${baseUrl}eatHtpService/getEatHtp?serviceKey=${serviceKey}&pageNo=1&numOfRows=10`
+  ).then((res) => res.json());
