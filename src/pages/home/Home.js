@@ -368,19 +368,21 @@ export const Home = () => {
       <Collection>
         <Container>
           <h2>Collection</h2>
-          <p>Find top restaurants and cafes in Gyeongju based on Trends</p>
+          <p>Find hot restaurants and cafes in Gyeongju 🔥</p>
 
           <ConWrap>
             <li>
-              <ConImg>
-                <img
-                  src="https://images.unsplash.com/photo-1616091216791-a5360b5fc78a?q=80&w=2590&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="trend"
-                />
-              </ConImg>
-              <ConBg />
+              <Link to={routes.hot}>
+                <ConImg>
+                  <img
+                    src="https://images.unsplash.com/photo-1616091216791-a5360b5fc78a?q=80&w=2590&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="trend"
+                  />
+                </ConImg>
+                <ConBg />
 
-              <h2>Top Trending Spots</h2>
+                <h2>Hot Places</h2>
+              </Link>
             </li>
           </ConWrap>
         </Container>

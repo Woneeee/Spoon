@@ -85,7 +85,7 @@ export const Cafe = () => {
       <CollContainer>
         <CollWrap>
           <h2>Collection</h2>
-          <p>Find top restaurants and cafes in Gyeongju based on Trends</p>
+          <p>Find hot restaurants and cafes in Gyeongju 🔥</p>
 
           <CollCon>
             <li>
@@ -95,7 +95,7 @@ export const Cafe = () => {
               />
               <CollBg />
 
-              <h2>Top Trending Spots</h2>
+              <h2>Hot Places</h2>
             </li>
           </CollCon>
         </CollWrap>
