@@ -96,10 +96,6 @@ const Location = styled.div`
   input {
     all: unset;
     border-right: 1px solid rgba(17, 17, 17, 0.2);
-    &::placeholder {
-      font-size: 17px;
-      font-style: italic;
-    }
   }
 `;
 

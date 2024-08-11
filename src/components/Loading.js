@@ -1,5 +1,6 @@
-import { ClipLoader } from "react-spinners";
+import { MoonLoader } from "react-spinners";
 import styled from "styled-components";
+import { point } from "../GlobalStyled";
 
 const Wrap = styled.div`
   width: 100%;
@@ -12,7 +13,7 @@ const Wrap = styled.div`
 export const Loading = () => {
   return (
     <Wrap>
-      <ClipLoader size={80} />
+      <MoonLoader color={point.color} size={80} />
     </Wrap>
   );
 };
