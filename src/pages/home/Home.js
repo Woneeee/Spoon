@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { point } from "../../GlobalStyled";
 import { routes } from "../../routes";
 import { HomeHeader } from "./components/HomeHeader";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const MainBanner = styled.div`
   width: 100%;
@@ -240,6 +241,8 @@ const ConBg = styled.div`
 `;
 
 export const Home = () => {
+  useScrollTop();
+
   const [resData, setResData] = useState();
   const { register, handleSubmit } = useForm();
 

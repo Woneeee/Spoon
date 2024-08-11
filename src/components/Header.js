@@ -9,6 +9,7 @@ import { routes } from "../routes";
 
 const Container = styled.div`
   width: 100%;
+  border-bottom: 1px solid #66666620;
   display: flex;
   justify-content: center;
   padding: 10px 0;
