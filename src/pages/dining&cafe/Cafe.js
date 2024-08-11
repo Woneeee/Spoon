@@ -51,7 +51,7 @@ export const Cafe = () => {
     })();
   }, []);
 
-  console.log(cafData);
+  // console.log(cafData);
 
   return (
     <>
@@ -66,15 +66,15 @@ export const Cafe = () => {
               <DinIcon>
                 <MdOutlineLocalDining />
               </DinIcon>
-              <p style={{ color: point.deepcolor }}>Dining</p>
+              <p>Dining</p>
             </Link>
           </li>
-          <li>
+          <li className="colorOn">
             <Link to={routes.cafe}>
               <CafIcon>
-                <IoMdCafe />
+                <IoMdCafe color="#76562a" />
               </CafIcon>
-              <p>Cafe</p>
+              <p style={{ color: point.deepcolor }}>Cafe</p>
             </Link>
           </li>
         </MenuWrap>
@@ -108,7 +108,7 @@ export const Cafe = () => {
       ) : (
         <DinContainer>
           <DinWrap>
-            <h2>Trending dining restaurants in South Korea Gyeongju 😊</h2>
+            <h2>Nice view cafes in South Korea Gyeongju 🍰</h2>
 
             <ResWrap>
               {cafData.map((data) => (
@@ -122,7 +122,7 @@ export const Cafe = () => {
                     </Img>
                     <h3>{data.CON_TITLE}</h3>
                     <Detail>
-                      <p>{"# " + data.CON_KEYWORDS.slice(0, 25) + "..."}</p>
+                      <p>{"# " + data.CON_KEYWORDS.slice(0, 33) + "..."}</p>
                       <span>{data.CON_ADDRESS}</span>
                     </Detail>
                   </Con>

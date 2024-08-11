@@ -21,9 +21,9 @@ export const MenuWrap = styled.ul`
     margin-right: 50px;
     font-size: 22px;
     font-weight: 500;
-    &:nth-child(1) {
-      border-bottom: 3px solid ${point.deepcolor};
-    }
+  }
+  .colorOn {
+    border-bottom: 3px solid ${point.deepcolor};
   }
 `;
 
@@ -37,7 +37,6 @@ export const DinIcon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: crimson;
 `;
 
 export const CafIcon = styled.div`
@@ -78,7 +77,7 @@ export const CollWrap = styled.div`
 export const CollCon = styled.ul`
   margin-top: 15px;
   width: 100%;
-  height: 360px;
+  height: 370px;
   li {
     position: relative;
     width: 26%;
@@ -136,12 +135,12 @@ export const ResWrap = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 20px;
-  row-gap: 35px;
+  column-gap: 25px;
+  row-gap: 45px;
 `;
 
 export const Con = styled.div`
-  height: 350px;
+  height: 420px;
   border-radius: 15px;
   padding: 10px;
   h3 {
@@ -150,10 +149,8 @@ export const Con = styled.div`
     margin-top: 10px;
   }
   &:hover {
-    /* transform: scale(1.03); */
     border: 1px solid #66666620;
     box-shadow: rgba(28, 28, 28, 0.08) 0px 2px 10px;
-    /* transition-duration: 0.4s; */
   }
 `;
 
@@ -171,6 +168,7 @@ export const Detail = styled.div`
     font-size: 14px;
     margin-top: 10px;
     margin-bottom: 8px;
+    line-height: 20px;
     opacity: 0.8;
   }
   span {

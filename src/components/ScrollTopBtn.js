@@ -3,12 +3,10 @@ import styled from "styled-components";
 import { point } from "../GlobalStyled";
 
 const TopBtn = styled.div`
-  width: 50px;
-  height: 50px;
   position: fixed;
   right: 30px;
   bottom: 30px;
-  font-size: 50px;
+  font-size: 70px;
   color: ${point.color};
   cursor: pointer;
 `;

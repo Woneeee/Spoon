@@ -11,7 +11,7 @@ const Container = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 20px 0;
+  padding: 10px 0;
 `;
 
 const Wrap = styled.div`

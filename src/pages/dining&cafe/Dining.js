@@ -3,7 +3,7 @@ import { restaurant } from "../../api";
 import { Header } from "../../components/Header";
 import { MdOutlineLocalDining } from "react-icons/md";
 import { IoMdCafe } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { routes } from "../../routes";
 import { Loading } from "../../components/Loading";
 import { IMG_BASE_URL } from "../../constant/imgUrl";
@@ -52,6 +52,7 @@ export const Dining = () => {
   }, []);
 
   // console.log(resData);
+  //
 
   return (
     <>
@@ -61,10 +62,10 @@ export const Dining = () => {
 
       <MenuCon>
         <MenuWrap>
-          <li>
+          <li className="colorOn">
             <Link to={routes.dining}>
               <DinIcon>
-                <MdOutlineLocalDining />
+                <MdOutlineLocalDining color="crimson" />
               </DinIcon>
               <p style={{ color: point.deepcolor }}>Dining</p>
             </Link>
@@ -108,7 +109,7 @@ export const Dining = () => {
       ) : (
         <DinContainer>
           <DinWrap>
-            <h2>Trending dining restaurants in South Korea Gyeongju 😊</h2>
+            <h2>Trending dining restaurants in South Korea Gyeongju 🍽️</h2>
 
             <ResWrap>
               {resData.map((data) => (
@@ -122,7 +123,7 @@ export const Dining = () => {
                     </Img>
                     <h3>{data.CON_TITLE}</h3>
                     <Detail>
-                      <p>{"# " + data.CON_KEYWORDS.slice(0, 25) + "..."}</p>
+                      <p>{"# " + data.CON_KEYWORDS.slice(0, 33) + "..."}</p>
                       <span>{data.CON_ADDRESS}</span>
                     </Detail>
                   </Con>
