@@ -133,6 +133,7 @@ export const Hot = () => {
         } = await hot();
 
         setHotData(hotResult);
+
         setIsLoading(false);
       } catch (error) {
         console.log(error);
@@ -141,7 +142,6 @@ export const Hot = () => {
   }, []);
 
   // console.log(hotData);
-  const randomIndex = Math.floor(Math.random() * hotData?.length);
 
   return (
     <>
@@ -152,7 +152,7 @@ export const Hot = () => {
       ) : (
         <>
           <BanContainer>
-            <BanWrap $bgUrl={`http://${hotData[randomIndex].CON_IMGFILENAME}`}>
+            <BanWrap $bgUrl={`http://${hotData[0].CON_IMGFILENAME}`}>
               <Text>
                 <h5>SPOON COLLECTION</h5>
                 <Title>Hot Places</Title>
