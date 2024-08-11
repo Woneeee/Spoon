@@ -20,7 +20,7 @@ export const GlobalStyled = createGlobalStyle`
     body{
         font-family: "Noto Sans KR", sans-serif;
         word-break: keep-all;
-        color: #3d3c3a;
+        color: #2e2e2e;
     }
 
     a{

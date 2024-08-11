@@ -371,7 +371,7 @@ export const Home = () => {
       <Collection>
         <Container>
           <h2>Collection</h2>
-          <p>Find hot restaurants and cafes in Gyeongju 🔥</p>
+          <p>The restaurants and cafes that are talk of the town 🔥</p>
 
           <ConWrap>
             <li>

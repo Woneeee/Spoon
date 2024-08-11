@@ -27,7 +27,7 @@ const Text = styled.div`
   width: 50%;
   height: 60%;
   background-color: rgba(28, 28, 28, 0.86);
-  /* backdrop-filter: blur(3px); */
+  backdrop-filter: blur(2px);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -38,6 +38,7 @@ const Text = styled.div`
     max-width: 480px;
     width: 100%;
     font-size: 15px;
+    font-weight: 300;
     margin-top: 15px;
     line-height: 22px;
     opacity: 0.8;
@@ -46,6 +47,7 @@ const Text = styled.div`
     display: block;
     margin-top: 20px;
     font-size: 14px;
+    font-weight: 300;
     opacity: 0.8;
   }
 `;
@@ -154,8 +156,8 @@ export const Hot = () => {
                 <h5>SPOON COLLECTION</h5>
                 <Title>Hot Places</Title>
                 <p>
-                  The restaurants that are talk of the town. Look out for more
-                  such popular places!
+                  The restaurants and cafes that are talk of the town. Look out
+                  for more such popular places!
                 </p>
                 <span>{hotData.length} Places</span>
               </Text>
