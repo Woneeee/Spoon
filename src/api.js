@@ -9,3 +9,8 @@ export const restaurant = () =>
   fetch(
     `${baseUrl}menuRstrtService/getMenuRstrt?serviceKey=${serviceKey}&pageNo=1&numOfRows=133` // numOfRows (배열의 길이 최댓값) : 133 => 임의로 작성
   ).then((res) => res.json());
+
+export const cafe = () =>
+  fetch(
+    `${baseUrl}cafeInfoService/getCafeInfo?serviceKey=${serviceKey}&pageNo=1&numOfRows=100`
+  ).then((res) => res.json());
