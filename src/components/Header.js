@@ -82,7 +82,7 @@ const SearchIcon = styled.div`
 const User = styled.ul`
   display: flex;
   li {
-    font-size: 17px;
+    font-size: 18px;
     cursor: pointer;
     &:nth-child(2) {
       margin-left: 30px;

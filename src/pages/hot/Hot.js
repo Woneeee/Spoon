@@ -1,3 +1,9 @@
+import { Header } from "../../components/Header";
+
 export const Hot = () => {
-  return <div>Hot</div>;
+  return (
+    <>
+      <Header />
+    </>
+  );
 };
