@@ -84,7 +84,7 @@ export const CollCon = styled.ul`
     height: 100%;
     img {
       height: 100%;
-      border-radius: 12px;
+      border-radius: 10px;
       object-fit: cover;
     }
     h2 {

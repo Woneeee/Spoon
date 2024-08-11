@@ -52,7 +52,6 @@ export const Dining = () => {
   }, []);
 
   // console.log(resData);
-  //
 
   return (
     <>

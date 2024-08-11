@@ -18,8 +18,7 @@ const BanWrap = styled.div`
   max-width: 1100px;
   width: 100%;
   height: 350px;
-  background: url("https://images.unsplash.com/photo-1616091216791-a5360b5fc78a?q=80&w=2590&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
-    no-repeat center / cover;
+  background: url(${(props) => props.$bgUrl}) no-repeat center / cover;
   position: relative;
   border-radius: 10px;
 `;
@@ -28,6 +27,7 @@ const Text = styled.div`
   width: 50%;
   height: 60%;
   background-color: rgba(28, 28, 28, 0.86);
+  /* backdrop-filter: blur(3px); */
   position: absolute;
   bottom: 0;
   left: 0;
@@ -35,7 +35,8 @@ const Text = styled.div`
   color: white;
   padding: 20px;
   p {
-    width: 480px;
+    max-width: 480px;
+    width: 100%;
     font-size: 15px;
     margin-top: 15px;
     line-height: 22px;
@@ -60,7 +61,6 @@ const HotContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: pink;
   margin-top: 50px;
 `;
 
@@ -69,28 +69,49 @@ const HotWrap = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  background-color: aliceblue;
   column-gap: 20px;
   row-gap: 20px;
 `;
 
 const Con = styled.div`
   height: 300px;
-  background-color: bisque;
+  background-color: #f6f9fc;
   border-radius: 12px;
+  &:hover {
+    transform: scale(1.03);
+    transition-duration: 0.4s;
+  }
 `;
 
 const Img = styled.div`
   width: 100%;
-  height: 70%;
+  height: 65%;
   img {
     height: 100%;
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 12px 12px 6px 6px;
   }
 `;
 
-const Detail = styled.div``;
+const ConText = styled.div`
+  padding: 10px;
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  p {
+    font-size: 15px;
+    margin-top: 10px;
+    opacity: 0.8;
+  }
+  span {
+    display: block;
+    font-size: 15px;
+    margin-top: 5px;
+    line-height: 19px;
+    opacity: 0.7;
+  }
+`;
 
 export const Hot = () => {
   useScrollTop();
@@ -128,7 +149,7 @@ export const Hot = () => {
       ) : (
         <>
           <BanContainer>
-            <BanWrap>
+            <BanWrap $bgUrl={`http://${hotData[0].CON_IMGFILENAME}`}>
               <Text>
                 <h5>SPOON COLLECTION</h5>
                 <Title>Hot Places</Title>
@@ -147,13 +168,16 @@ export const Hot = () => {
                 <Link key={data.CON_UID} to={`/detail/${data.CON_UID}`}>
                   <Con>
                     <Img>
-                      <img src={data.CON_IMGFILENAME} alt={data.CON_TITLE} />
+                      <img
+                        src={`https://${data.CON_IMGFILENAME}`}
+                        alt={data.CON_TITLE}
+                      />
                     </Img>
-                    <h3>{data.CON_TITLE}</h3>
-                    <Detail>
+                    <ConText>
+                      <h3>{data.CON_TITLE}</h3>
                       <p>{"# " + data.AREA_NAME}</p>
                       <span>{data.CON_DESC1}</span>
-                    </Detail>
+                    </ConText>
                   </Con>
                 </Link>
               ))}
