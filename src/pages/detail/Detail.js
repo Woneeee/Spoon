@@ -6,23 +6,26 @@ import { Loading } from "../../components/Loading";
 import { Header } from "../../components/Header";
 import styled from "styled-components";
 import { IMG_BASE_URL, IMG_WWW_URL } from "../../constant/imgUrl";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "./css/swiperStyle.css";
 
-export const PlaceContainer = styled.div`
-  width: 100%;
-  background-color: pink;
-  margin-top: 50px;
-  display: flex;
-`;
+// export const PlaceContainer = styled.div`
+//   width: 100%;
+//   background-color: pink;
+//   margin-top: 50px;
+//   display: flex;
+// `;
 
-export const ImgWrap = styled.div`
-  width: 33.33%;
-  height: 350px;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
+// export const ImgWrap = styled.div`
+//   width: 33.33%;
+//   height: 350px;
+//   img {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
+// `;
 
 export const Detail = () => {
   useScrollTop();
@@ -59,7 +62,7 @@ export const Detail = () => {
   const secImgSIdx = placeData?.CON_CONTENT.lastIndexOf("/upload");
   const secImgEIdx = placeData?.CON_CONTENT.lastIndexOf("jpg");
 
-  console.log(resData);
+  // console.log(resData);
   console.log(placeData);
   // console.log(secImgSIdx);
   // console.log(secImgEIdx);
@@ -73,14 +76,16 @@ export const Detail = () => {
         <>
           <Header />
 
-          <PlaceContainer>
-            <ImgWrap>
+          {/* -------------------------------------------------------------------------------------------------- */}
+
+          <Swiper slidesPerView={2.5}>
+            <SwiperSlide className="slide slide_1">
               <img
                 src={IMG_BASE_URL + placeData.CON_IMGFILENAME}
                 alt={placeData.CON_TITLE}
               />
-            </ImgWrap>
-            <ImgWrap>
+            </SwiperSlide>
+            <SwiperSlide className="slide slide_2">
               <img
                 src={`
                   ${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
@@ -89,8 +94,8 @@ export const Detail = () => {
                 )}jpg`}
                 alt={placeData.CON_TITLE}
               />
-            </ImgWrap>
-            <ImgWrap>
+            </SwiperSlide>
+            <SwiperSlide className="slide slide_3">
               <img
                 src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
                   secImgSIdx,
@@ -98,8 +103,8 @@ export const Detail = () => {
                 )}jpg`}
                 alt={placeData.CON_TITLE}
               />
-            </ImgWrap>
-          </PlaceContainer>
+            </SwiperSlide>
+          </Swiper>
         </>
       )}
     </>
