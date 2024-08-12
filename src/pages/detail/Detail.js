@@ -30,7 +30,9 @@ export const Detail = () => {
         } = await restaurant();
         setResData(resResult);
 
-        const placeResult = resResult.filter((res) => res.CON_UID === 414);
+        const placeResult = resResult.filter(
+          (res) => res.CON_UID === Number(placeId)
+        );
         setPlaceData(placeResult[0]);
 
         setIsLoading(false);
@@ -62,13 +64,13 @@ export const Detail = () => {
           {/* -------------------------------------------------------------------------------------------------- */}
 
           <Swiper slidesPerView={2.5} className="swiper">
-            <SwiperSlide className="slide slide_1">
+            <SwiperSlide className="slide">
               <img
                 src={IMG_BASE_URL + placeData.CON_IMGFILENAME}
                 alt={placeData.CON_TITLE}
               />
             </SwiperSlide>
-            <SwiperSlide className="slide slide_2">
+            <SwiperSlide className="slide">
               <img
                 src={`
                   ${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
@@ -78,7 +80,7 @@ export const Detail = () => {
                 alt={placeData.CON_TITLE}
               />
             </SwiperSlide>
-            <SwiperSlide className="slide slide_3">
+            <SwiperSlide className="slide">
               <img
                 src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
                   secImgSIdx,
@@ -88,6 +90,8 @@ export const Detail = () => {
               />
             </SwiperSlide>
           </Swiper>
+
+          {/* ----------------------------------------------------------------------------------------------------- */}
         </>
       )}
     </>

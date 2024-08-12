@@ -116,7 +116,7 @@ export const Cafe = () => {
 
             <ResWrap>
               {cafData.map((data) => (
-                <Link key={data.CON_UID} to={`/detail/${data.CON_UID}`}>
+                <Link key={data.CON_UID} to={`/cafedetail/${data.CON_UID}`}>
                   <Con>
                     <Img>
                       <img
