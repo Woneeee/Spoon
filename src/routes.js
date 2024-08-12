@@ -5,5 +5,6 @@ export const routes = {
   hot: "/hot",
   detail: "/detail/:id",
   cafedetail: "/cafedetail/:id",
+  hotdetail: "/hotdetail/:id",
   search: "/search/:id",
 };

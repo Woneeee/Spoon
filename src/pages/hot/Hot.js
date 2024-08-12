@@ -175,7 +175,7 @@ export const Hot = () => {
           <HotContainer>
             <HotWrap>
               {hotData.map((data) => (
-                <Link key={data.CON_UID} to={`/detail/${data.CON_UID}`}>
+                <Link key={data.CON_UID} to={`/hotdetail/${data.CON_UID}`}>
                   <Con>
                     <Img>
                       <img

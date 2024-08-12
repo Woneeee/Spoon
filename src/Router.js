@@ -10,6 +10,7 @@ import { Dining } from "./pages/dining&cafe/Dining";
 import { Cafe } from "./pages/dining&cafe/Cafe";
 import { Hot } from "./pages/hot/Hot";
 import { CafeDetail } from "./pages/detail/CafeDetail";
+import { HotDetail } from "./pages/detail/HotDetail";
 
 const Router = () => {
   return (
@@ -21,7 +22,8 @@ const Router = () => {
         <Route path={routes.cafe} element={<Cafe />} />
         <Route path={routes.hot} element={<Hot />} />
         <Route path={routes.detail} element={<Detail />} />
-        <Route path={routes.cafedetail} element={CafeDetail} />
+        <Route path={routes.cafedetail} element={<CafeDetail />} />
+        <Route path={routes.hotdetail} element={<HotDetail />} />
         <Route path={routes.search} element={<Search />} />
         <Route path={"/*"} element={<PageNotFound />} />
       </Routes>

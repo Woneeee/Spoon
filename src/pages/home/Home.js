@@ -261,7 +261,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(resData);
+  // console.log(resData);
 
   const navi = useNavigate();
   const searchHandler = ({ sort }) => {
