@@ -45,7 +45,7 @@ export const Detail = () => {
   const secImgSIdx = placeData?.CON_CONTENT.lastIndexOf("/upload");
   const secImgEIdx = placeData?.CON_CONTENT.lastIndexOf("jpg");
 
-  // console.log(resData);
+  console.log(resData);
   console.log(placeData);
   // console.log(secImgSIdx);
   // console.log(secImgEIdx);
