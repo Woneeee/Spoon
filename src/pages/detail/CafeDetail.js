@@ -6,6 +6,8 @@ import { Loading } from "../../components/Loading";
 import { Header } from "../../components/Header";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { IMG_BASE_URL, IMG_WWW_URL } from "../../constant/imgUrl";
+import "swiper/css";
+import "./css/swiperStyle.css";
 
 export const CafeDetail = () => {
   useScrollTop();
@@ -84,6 +86,8 @@ export const CafeDetail = () => {
               />
             </SwiperSlide>
           </Swiper>
+
+          {/* ---------------------------------------------------------------------------------------------------- */}
         </>
       )}
     </>

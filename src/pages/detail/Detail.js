@@ -9,12 +9,6 @@ import { IMG_BASE_URL, IMG_WWW_URL } from "../../constant/imgUrl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./css/swiperStyle.css";
-import {
-  firtImgEIdx,
-  firtImgSIdx,
-  secImgEIdx,
-  secImgSIdx,
-} from "../../constant/imgIdx";
 
 export const Detail = () => {
   useScrollTop();
