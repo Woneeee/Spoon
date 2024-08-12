@@ -9,6 +9,7 @@ import { Loading } from "../../components/Loading";
 import { IMG_BASE_URL } from "../../constant/imgUrl";
 import { useScrollTop } from "../../lib/useScrollTop";
 import { point } from "../../GlobalStyled";
+import { Title } from "../../components/Title";
 import {
   MenuCon,
   MenuWrap,
@@ -55,6 +56,7 @@ export const Dining = () => {
 
   return (
     <>
+      <Title titleName="🍽️" />
       <Header />
 
       {/* ------------------------------------------------------------------------------------ */}

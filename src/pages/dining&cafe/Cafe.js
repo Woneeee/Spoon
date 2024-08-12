@@ -25,6 +25,7 @@ import { cafe, restaurant } from "../../api";
 import { IMG_BASE_URL } from "../../constant/imgUrl";
 import { Loading } from "../../components/Loading";
 import { routes } from "../../routes";
+import { Title } from "../../components/Title";
 
 export const Cafe = () => {
   useScrollTop();
@@ -55,6 +56,7 @@ export const Cafe = () => {
 
   return (
     <>
+      <Title titleName="☕" />
       <Header />
 
       {/* ------------------------------------------------------------------------------------ */}
@@ -123,12 +125,14 @@ export const Cafe = () => {
                       />
                     </Img>
                     <h3>{data.CON_TITLE}</h3>
+
                     <Detail>
                       {data.CON_KEYWORDS ? (
                         <p>{"# " + data.CON_KEYWORDS.slice(0, 25) + "..."}</p>
                       ) : (
                         ""
                       )}
+
                       <span>{data.CON_ADDRESS}</span>
                     </Detail>
                   </Con>

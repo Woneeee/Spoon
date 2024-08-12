@@ -11,6 +11,7 @@ import { point } from "../../GlobalStyled";
 import { routes } from "../../routes";
 import { HomeHeader } from "./components/HomeHeader";
 import { useScrollTop } from "../../lib/useScrollTop";
+import { Title } from "../../components/Title";
 
 const MainBanner = styled.div`
   width: 100%;
@@ -278,6 +279,7 @@ export const Home = () => {
 
   return (
     <>
+      <Title titleName="🏠" />
       <HomeHeader />
 
       <MainBanner>

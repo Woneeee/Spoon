@@ -120,6 +120,7 @@ export const Hot = () => {
   useScrollTop();
 
   const [hotData, setHotData] = useState();
+  const [randomIdx, setRandomIdx] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -132,8 +133,10 @@ export const Hot = () => {
             },
           },
         } = await hot();
-
         setHotData(hotResult);
+
+        const randomIndex = Math.floor(Math.random() * hotResult.length);
+        setRandomIdx(randomIndex);
 
         setIsLoading(false);
       } catch (error) {
@@ -143,6 +146,7 @@ export const Hot = () => {
   }, []);
 
   // console.log(hotData);
+  console.log(randomIdx);
 
   return (
     <>
@@ -153,7 +157,7 @@ export const Hot = () => {
       ) : (
         <>
           <BanContainer>
-            <BanWrap $bgUrl={`http://${hotData[0].CON_IMGFILENAME}`}>
+            <BanWrap $bgUrl={`http://${hotData[randomIdx].CON_IMGFILENAME}`}>
               <Text>
                 <h5>SPOON COLLECTION</h5>
                 <Title>Hot Places</Title>
