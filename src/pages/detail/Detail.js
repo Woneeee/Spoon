@@ -10,23 +10,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./css/swiperStyle.css";
 
-// export const PlaceContainer = styled.div`
-//   width: 100%;
-//   background-color: pink;
-//   margin-top: 50px;
-//   display: flex;
-// `;
-
-// export const ImgWrap = styled.div`
-//   width: 33.33%;
-//   height: 350px;
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//   }
-// `;
-
 export const Detail = () => {
   useScrollTop();
 
@@ -78,7 +61,7 @@ export const Detail = () => {
 
           {/* -------------------------------------------------------------------------------------------------- */}
 
-          <Swiper slidesPerView={2.5}>
+          <Swiper slidesPerView={2.5} className="swiper">
             <SwiperSlide className="slide slide_1">
               <img
                 src={IMG_BASE_URL + placeData.CON_IMGFILENAME}

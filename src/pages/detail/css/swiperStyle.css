@@ -1,6 +1,10 @@
+.swiper {
+  width: 100%;
+  margin-top: 50px;
+}
+
 .slide {
   height: 350px;
-  margin-top: 50px;
   img {
     height: 100%;
     object-fit: cover;
