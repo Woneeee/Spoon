@@ -18,7 +18,7 @@ export const ScrollTopBtn = () => {
 
   useEffect(() => {
     const scrollHandler = () => {
-      if (window.scrollY > 1100) {
+      if (window.scrollY > 1000) {
         setViewBtn(true);
       } else {
         setViewBtn(false);
