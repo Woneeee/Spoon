@@ -5,6 +5,7 @@ import { Loading } from "../../components/Loading";
 import { useScrollTop } from "../../lib/useScrollTop";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Title } from "../../components/Title";
 
 const BanContainer = styled.div`
   width: 100%;
@@ -52,7 +53,7 @@ const Text = styled.div`
   }
 `;
 
-const Title = styled.div`
+const STitle = styled.div`
   margin-top: 10px;
   font-size: 40px;
   font-weight: 500;
@@ -156,11 +157,12 @@ export const Hot = () => {
         <Loading />
       ) : (
         <>
+          <Title titleName="🔥" />
           <BanContainer>
             <BanWrap $bgUrl={`http://${hotData[randomIdx].CON_IMGFILENAME}`}>
               <Text>
                 <h5>SPOON COLLECTION</h5>
-                <Title>Hot Places</Title>
+                <STitle>Hot Places</STitle>
                 <p>
                   The restaurants and cafes that are talk of the town. Look out
                   for more such popular places!
