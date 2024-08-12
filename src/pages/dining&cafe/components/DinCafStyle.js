@@ -165,13 +165,14 @@ export const Img = styled.div`
 
 export const Detail = styled.div`
   p {
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 10px;
-    margin-bottom: 8px;
     line-height: 20px;
     opacity: 0.8;
   }
   span {
+    display: block;
+    margin-top: 10px;
     font-size: 14px;
     opacity: 0.6;
   }

@@ -108,10 +108,11 @@ const ConText = styled.div`
   }
   span {
     display: block;
-    font-size: 15px;
-    margin-top: 5px;
+    font-size: 14px;
+    margin-top: 8px;
     line-height: 19px;
-    opacity: 0.7;
+    opacity: 0.6;
+    letter-spacing: -0.8px;
   }
 `;
 

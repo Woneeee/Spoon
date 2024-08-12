@@ -124,7 +124,11 @@ export const Cafe = () => {
                     </Img>
                     <h3>{data.CON_TITLE}</h3>
                     <Detail>
-                      <p>{"# " + data.CON_KEYWORDS.slice(0, 33) + "..."}</p>
+                      {data.CON_KEYWORDS ? (
+                        <p>{"# " + data.CON_KEYWORDS.slice(0, 25) + "..."}</p>
+                      ) : (
+                        ""
+                      )}
                       <span>{data.CON_ADDRESS}</span>
                     </Detail>
                   </Con>
