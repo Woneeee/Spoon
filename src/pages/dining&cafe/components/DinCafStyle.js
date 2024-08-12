@@ -29,7 +29,7 @@ export const MenuWrap = styled.ul`
 
 export const DinIcon = styled.div`
   margin-right: 10px;
-  font-size: 30px;
+  font-size: 23px;
   width: 60px;
   height: 60px;
   border-radius: 100%;
@@ -41,7 +41,7 @@ export const DinIcon = styled.div`
 
 export const CafIcon = styled.div`
   margin-right: 10px;
-  font-size: 30px;
+  font-size: 23px;
   width: 60px;
   height: 60px;
   border-radius: 100%;
