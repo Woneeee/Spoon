@@ -230,6 +230,7 @@ const Call = styled.div`
   p {
     margin-top: 10px;
     color: crimson;
+    font-size: 17px;
   }
 `;
 
@@ -240,6 +241,8 @@ const Direction = styled.div`
   }
   p {
     margin-top: 10px;
+    font-size: 15px;
+    letter-spacing: -1px;
   }
 `;
 
@@ -249,6 +252,7 @@ const HomePage = styled.div`
     font-size: 20px;
     margin-bottom: 10px;
   }
+
   a {
     display: block;
     text-decoration: underline;

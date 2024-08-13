@@ -29,7 +29,7 @@ export const KakaoMap = ({ data }) => {
       style={{
         marginTop: "10px",
         width: "100%",
-        height: "200px",
+        height: "230px",
       }}
     ></div>
   );
