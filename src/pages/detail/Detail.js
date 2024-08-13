@@ -304,8 +304,20 @@ export const Detail = () => {
     setWriteData(writeResult);
   };
 
-  console.log(resData);
-  console.log(placeData);
+  const noTagText = placeData?.CON_CONTENT.replace(
+    /<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/gi,
+    ""
+  );
+  const cleanText_1 = noTagText?.replace(
+    /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g,
+    ""
+  );
+
+  const totallyCleanText = cleanText_1?.replace(/[a-zA-Z0-9]/g, "");
+  console.log(totallyCleanText);
+
+  // console.log(resData);
+  // console.log(placeData);
   // console.log(secImgSIdx);
   // console.log(secImgEIdx);
   // console.log(placeData?.CON_CONTENT.slice(secImgSIdx, secImgEIdx));
@@ -375,7 +387,7 @@ export const Detail = () => {
                 <Details>
                   <StoIntro>
                     <h2>Introduce</h2>
-                    <p>{placeData.CON_CONTENT.slice(0, introIdx)}</p>
+                    <p>{totallyCleanText}</p>
                   </StoIntro>
 
                   <StoMenu>
@@ -423,11 +435,8 @@ export const Detail = () => {
 
                 <HomePage>
                   <h2>HomePage</h2>
-                  {placeData.CON_HOMEPAGE && (
-                    <a href={placeData.CON_HOMEPAGE}>
-                      {placeData.CON_HOMEPAGE}
-                    </a>
-                  )}
+
+                  <a href={placeData.CON_HOMEPAGE}>{placeData.CON_HOMEPAGE}</a>
                 </HomePage>
               </StoDirec>
             </Container>
