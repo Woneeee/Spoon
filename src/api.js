@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 const fetch = require("node-fetch");
 
 const baseUrl = "https://apis.data.go.kr/5050000/";

@@ -9,9 +9,12 @@ import { IMG_BASE_URL, IMG_WWW_URL } from "../../constant/imgUrl";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "./css/swiperStyle.css";
+import { Navigation } from "swiper/modules";
+import "swiper/css/navigation";
 import { FaLocationDot } from "react-icons/fa6";
 import { ImSpoonKnife } from "react-icons/im";
 import { useForm } from "react-hook-form";
+import { KakaoMap } from "../../function/KakaoMap";
 
 const Section = styled.div`
   width: 100%;
@@ -291,6 +294,15 @@ export const Detail = () => {
   const menuIdx = placeData?.CON_SUMMARY.indexOf("<br />");
   const introIdx = placeData?.CON_CONTENT.indexOf("<ul");
   const [writeData, setWriteData] = useState();
+  const noTagText = placeData?.CON_CONTENT.replace(
+    /<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/gi,
+    ""
+  );
+  const cleanText_1 = noTagText?.replace(
+    /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g,
+    ""
+  );
+  const totallyCleanText = cleanText_1?.replace(/[a-zA-Z0-9]/g, "");
 
   const moreHandler = () => {};
 
@@ -304,20 +316,8 @@ export const Detail = () => {
     setWriteData(writeResult);
   };
 
-  const noTagText = placeData?.CON_CONTENT.replace(
-    /<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/gi,
-    ""
-  );
-  const cleanText_1 = noTagText?.replace(
-    /[\{\}\[\]\/?.,;:|\)*~`!^\-_+<>@\#$%&\\\=\(\'\"]/g,
-    ""
-  );
-
-  const totallyCleanText = cleanText_1?.replace(/[a-zA-Z0-9]/g, "");
-  console.log(totallyCleanText);
-
   // console.log(resData);
-  // console.log(placeData);
+  console.log(placeData);
   // console.log(secImgSIdx);
   // console.log(secImgEIdx);
   // console.log(placeData?.CON_CONTENT.slice(secImgSIdx, secImgEIdx));
@@ -332,7 +332,12 @@ export const Detail = () => {
 
           {/* -------------------------------------------------------------------------------------------------- */}
 
-          <Swiper slidesPerView={2.5} className="swiper">
+          <Swiper
+            slidesPerView={2.5}
+            className="swiper"
+            modules={[Navigation]}
+            navigation
+          >
             <SwiperSlide className="slide">
               <img
                 src={IMG_BASE_URL + placeData.CON_IMGFILENAME}
@@ -430,6 +435,8 @@ export const Detail = () => {
 
                 <Direction>
                   <h2>Direction</h2>
+
+                  <KakaoMap data={placeData} />
                   <p>{placeData.CON_ADDRESS}</p>
                 </Direction>
 
