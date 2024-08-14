@@ -138,7 +138,7 @@ export const Header = () => {
             })}
             className="sort"
             type="text"
-            placeholder="한식, 양식, 일식, 중식..."
+            placeholder="키워드를 입력해주세요..."
           />
 
           <button>Search</button>
