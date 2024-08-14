@@ -19,17 +19,19 @@ export const Container = styled.div`
 `;
 
 export const StoWrap = styled.div`
-  height: 1200px;
+  /* height: 1200px; */
   /* background-color: beige; */
+  margin: 30px 0 200px 0;
 `;
 
 export const StoInfo = styled.div`
-  padding: 30px 0 40px 0;
+  padding: 0 0 40px 0;
   border-bottom: 2px solid #55555520;
   p {
     font-size: 15px;
     font-weight: 500;
     border-radius: 10px;
+    line-height: 23px;
   }
   h2 {
     font-size: 33px;
@@ -89,7 +91,6 @@ export const Details = styled.div``;
 
 export const StoIntro = styled.div`
   margin-top: 40px;
-
   h2 {
     font-size: 28px;
     font-weight: 500;
@@ -191,8 +192,8 @@ export const ErrorMessage = styled.div`
 export const ReviewCon = styled.div`
   width: 100%;
   height: 100px;
-  border-top: 1px solid #55555520;
-  border-bottom: 1px solid #55555520;
+  border-top: 1px solid #55555540;
+  border-bottom: 1px solid #55555540;
   margin-top: 10px;
   padding: 30px 0;
 `;
