@@ -267,6 +267,8 @@ export const Home = () => {
   const [resData, setResData] = useState();
   const [cafData, setCafData] = useState();
 
+  const { register, handleSubmit } = useForm();
+
   useEffect(() => {
     (async () => {
       try {
@@ -296,16 +298,16 @@ export const Home = () => {
   console.log(resData);
   // console.log(cafData);
 
-  const { register, handleSubmit } = useForm();
-
   const navi = useNavigate();
   const searchHandler = ({ keyword }) => {
     const keyResult = resData.filter(
       (res) => res.CON_KEYWORDS.includes(keyword) === true
     );
 
-    console.log(keyResult);
-    navi(`/detail/${keyResult[0].CON_UID}`);
+    // console.log(keyResult);
+    {
+      keyResult ? navi(`/detail/${keyResult[0].CON_UID}`) : navi("/");
+    }
   };
 
   // split 사용

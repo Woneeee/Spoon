@@ -6,6 +6,8 @@ import { MdLocationOn } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 import { Link, useNavigate } from "react-router-dom";
 import { routes } from "../routes";
+import { useEffect, useState } from "react";
+import { cafe, restaurant } from "../api";
 
 const Container = styled.div`
   width: 100%;
@@ -83,17 +85,45 @@ const SearchIcon = styled.div`
 export const Header = () => {
   const { register, handleSubmit } = useForm();
 
+  const [resData, setResData] = useState();
+  const [cafData, setCafData] = useState();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const {
+          response: {
+            body: {
+              items: { item: resResult },
+            },
+          },
+        } = await restaurant();
+        const {
+          response: {
+            body: {
+              items: { item: cafResult },
+            },
+          },
+        } = await cafe();
+
+        setResData(resResult);
+        setCafData(cafResult);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
   const navi = useNavigate();
-  const searchHandler = ({ sort }) => {
-    if (sort === "한식") {
-      navi("/search/1001");
-    } else if (sort === "양식") {
-      navi("/search/1000");
-    } else if (sort === "일식") {
-      navi("/search/1002");
-    } else if (sort === "중식") {
-      navi("/search/1003");
-    }
+  const searchHandler = ({ keyword }) => {
+    const keyResult = resData.filter(
+      (res) => res.CON_KEYWORDS.includes(keyword) === true
+    );
+
+    // console.log(keyResult);
+    // {
+    //   keyResult && navi(`/detail/${keyResult[0].CON_UID}`);
+    // }
   };
 
   return (
@@ -122,7 +152,7 @@ export const Header = () => {
             <AiOutlineSearch />
           </SearchIcon>
           <input
-            {...register("sort", {
+            {...register("keyword", {
               required: false,
             })}
             className="sort"
