@@ -15,11 +15,13 @@ import { FaLocationDot } from "react-icons/fa6";
 import { ImSpoonKnife } from "react-icons/im";
 import { useForm } from "react-hook-form";
 import { KakaoMap } from "../../function/KakaoMap";
+import { IoCloseCircleOutline } from "react-icons/io5";
 
 const Section = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
   /* background-color: pink; */
 `;
 
@@ -143,13 +145,14 @@ const Button = styled.div`
 
 const MoreDetail = styled.button`
   all: unset;
-  width: 160px;
+  width: 180px;
   height: 100%;
   background-color: salmon;
-  border-radius: 12px;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 const Reviews = styled.form`
@@ -259,6 +262,52 @@ const HomePage = styled.div`
   }
 `;
 
+const JustForDisplay = styled.div`
+  display: ${(props) => props.$canLook};
+`;
+
+const MoreBg = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: #00000090;
+  backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+`;
+
+const MoreCon = styled.div`
+  max-width: 400px;
+  width: 100%;
+  height: 400px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  h2 {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+  p {
+    margin-top: 20px;
+    font-size: 17px;
+    opacity: 0.8;
+    letter-spacing: 0.2px;
+    line-height: 25px;
+  }
+`;
+
+const Close = styled.div`
+  font-size: 70px;
+  margin-bottom: 5%;
+  cursor: pointer;
+  margin: 90px auto;
+`;
+
 export const Detail = () => {
   useScrollTop();
 
@@ -296,7 +345,6 @@ export const Detail = () => {
   const secImgSIdx = placeData?.CON_CONTENT.lastIndexOf("/upload");
   const secImgEIdx = placeData?.CON_CONTENT.lastIndexOf("jpg");
   const menuIdx = placeData?.CON_SUMMARY.indexOf("<br />");
-  const introIdx = placeData?.CON_CONTENT.indexOf("<ul");
   const [writeData, setWriteData] = useState();
   const noTagText = placeData?.CON_CONTENT.replace(
     /<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/gi,
@@ -307,8 +355,20 @@ export const Detail = () => {
     ""
   );
   const totallyCleanText = cleanText_1?.replace(/[a-zA-Z0-9]/g, "");
+  const ogDetailTxt = placeData?.CON_SUMMARY.slice(menuIdx);
+  const cleanDetailTXT = ogDetailTxt?.replace(
+    /<(\/)?([a-zA-Z]*)(\s[a-zA-Z]*=[^>]*)?(\s)*(\/)?>/gi,
+    " •"
+  );
+  const [isVisable, setIsVisable] = useState(false);
 
-  const moreHandler = () => {};
+  const moreHandler = () => {
+    setIsVisable(true);
+  };
+
+  const closeHandler = () => {
+    setIsVisable(false);
+  };
 
   const {
     register,
@@ -320,8 +380,8 @@ export const Detail = () => {
     setWriteData(writeResult);
   };
 
-  // console.log(resData);
-  console.log(placeData);
+  console.log(resData);
+  // console.log(placeData);
   // console.log(secImgSIdx);
   // console.log(secImgEIdx);
   // console.log(placeData?.CON_CONTENT.slice(secImgSIdx, secImgEIdx));
@@ -451,6 +511,19 @@ export const Detail = () => {
                 </HomePage>
               </StoDirec>
             </Container>
+
+            <JustForDisplay $canLook={isVisable ? "display" : "none"}>
+              <MoreBg>
+                <Close onClick={closeHandler}>
+                  <IoCloseCircleOutline />
+                </Close>
+
+                <MoreCon>
+                  <h2>Details</h2>
+                  <p>{cleanDetailTXT}</p>
+                </MoreCon>
+              </MoreBg>
+            </JustForDisplay>
           </Section>
         </>
       )}

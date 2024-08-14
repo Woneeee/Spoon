@@ -12,8 +12,8 @@ export const KakaoMap = ({ data }) => {
     const map = new kakao.maps.Map(container, options);
 
     const markerPosition = new kakao.maps.LatLng(
-      data.CON_LATITUDE,
-      data.CON_LONGITUDE
+      data?.CON_LATITUDE,
+      data?.CON_LONGITUDE
     ); // 마커가 표시될 위치
     const marker = new kakao.maps.Marker({
       // 마커를 생성한다
