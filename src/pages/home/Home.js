@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { restaurant } from "../../api";
+import { cafe, hot, restaurant } from "../../api";
 import styled from "styled-components";
 import bg from "../../img/d.jpg";
 import { useForm } from "react-hook-form";
@@ -241,6 +241,8 @@ export const Home = () => {
   useScrollTop();
 
   const [resData, setResData] = useState();
+  const [cafData, setCafData] = useState();
+  const [hotData, setHotData] = useState();
   const { register, handleSubmit } = useForm();
 
   useEffect(() => {
@@ -253,29 +255,55 @@ export const Home = () => {
             },
           },
         } = await restaurant();
+        const {
+          response: {
+            body: {
+              items: { item: cafResult },
+            },
+          },
+        } = await cafe();
+        const {
+          response: {
+            body: {
+              items: { item: hotResult },
+            },
+          },
+        } = await hot();
 
         setResData(resResult);
+        setCafData(cafResult);
+        setHotData(hotResult);
       } catch (error) {
         console.log(error);
       }
     })();
   }, []);
 
-  // console.log(resData);
+  console.log(resData);
+  // console.log(cafData);
+  // console.log(hotData);
 
-  const navi = useNavigate();
-  const searchHandler = ({ sort }) => {
-    // Link 태그와 비슷하고 페이지를 직접 선택하여 바꿀수있게 해줌
-    if (sort === "한식") {
-      navi("/search/1001");
-    } else if (sort === "양식") {
-      navi("/search/1000");
-    } else if (sort === "일식") {
-      navi("/search/1002");
-    } else if (sort === "중식") {
-      navi("/search/1003");
-    }
+  const navi = useNavigate(); // Link 태그와 비슷하고 페이지를 직접 선택하여 바꿀수있게 해줌
+  const searchHandler = ({ keyword }) => {
+    const keyResult = resData.filter(
+      (res) => res.CON_KEYWORDS.includes(keyword) === true
+    );
+    console.log(keyResult);
+    // navi(`/detail/${keyResult[0].CON_UID}`);
   };
+
+  // split 사용
+  // console.log(resData[0]?.CON_KEYWORDS?.split(","));
+  // console.log(Array.isArray(resData[0]?.CON_KEYWORDS?.split(",")));
+  // {
+  //   resData &&
+  //     console.log(resData[0].CON_KEYWORDS.split(",").includes("포메인"));
+  // }
+
+  // 배열에 안넣음
+  // {
+  //   resData && console.log(resData[0].CON_KEYWORDS.includes("포메인"));
+  // }
 
   return (
     <>
@@ -315,7 +343,7 @@ export const Home = () => {
                 <AiOutlineSearch />
               </SearchIcon>
               <input
-                {...register("sort", {
+                {...register("keyword", {
                   required: false,
                 })}
                 type="text"
