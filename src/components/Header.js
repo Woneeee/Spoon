@@ -124,7 +124,7 @@ export const Header = () => {
 
     keyResult.length !== 0
       ? navi(`/detail/${keyResult[0].CON_UID}`)
-      : navi("/");
+      : navi("/dining");
   };
 
   return (
