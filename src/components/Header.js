@@ -121,9 +121,10 @@ export const Header = () => {
     );
 
     // console.log(keyResult);
-    // {
-    //   keyResult && navi(`/detail/${keyResult[0].CON_UID}`);
-    // }
+
+    keyResult.length !== 0
+      ? navi(`/detail/${keyResult[0].CON_UID}`)
+      : navi("/");
   };
 
   return (

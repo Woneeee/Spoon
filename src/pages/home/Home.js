@@ -305,9 +305,10 @@ export const Home = () => {
     );
 
     // console.log(keyResult);
-    {
-      keyResult ? navi(`/detail/${keyResult[0].CON_UID}`) : navi("/");
-    }
+
+    keyResult.length !== 0
+      ? navi(`/detail/${keyResult[0].CON_UID}`)
+      : navi("/");
   };
 
   // split 사용
