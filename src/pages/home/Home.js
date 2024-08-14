@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { cafe, hot, restaurant } from "../../api";
+import { cafe, restaurant } from "../../api";
 import styled from "styled-components";
 import bg from "../../img/d.jpg";
-import { useForm } from "react-hook-form";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
 import { TbBowlSpoonFilled } from "react-icons/tb";
@@ -11,8 +10,8 @@ import { point } from "../../GlobalStyled";
 import { routes } from "../../routes";
 import { useScrollTop } from "../../lib/useScrollTop";
 import { Title } from "../../components/Title";
-import { IoClose } from "react-icons/io5";
 import { FaMobileAlt } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 const SHeader = styled.div`
   width: 100%;
@@ -35,16 +34,6 @@ const HeaderCon = styled.div`
     cursor: pointer;
     color: white;
     font-size: 16px;
-  }
-`;
-
-const User = styled.ul`
-  display: flex;
-  color: white;
-  li {
-    margin-left: 30px;
-    font-size: 18px;
-    cursor: pointer;
   }
 `;
 
@@ -272,90 +261,6 @@ const ConBg = styled.div`
   );
 `;
 
-const JustForDisplay = styled.div`
-  display: ${(props) => props.$canLook};
-`;
-
-const LoginContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  background-color: rgba(17, 17, 17, 0.92);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const LoginForm = styled.form`
-  width: 480px;
-  height: 600px;
-  border-radius: 3px;
-  background-color: rgba(255, 255, 255);
-  backdrop-filter: blur(5px);
-  padding: 30px;
-  border-radius: 10px;
-  h3 {
-    font-size: 40px;
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 50px;
-  }
-
-  input {
-    all: unset;
-    width: 100%;
-    height: 50px;
-    background-color: white;
-    border: 1px solid rgba(68, 68, 68, 0.4);
-    margin-bottom: 10px;
-    border-radius: 6px;
-    font-size: 18px;
-    &::placeholder {
-      font-size: 16px;
-      padding: 0 20px;
-    }
-  }
-
-  button {
-    all: unset;
-    width: 100%;
-    height: 60px;
-    font-size: 18px;
-    background-color: ${point.color};
-    text-align: center;
-    margin-top: 30px;
-    border-radius: 6px;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-`;
-
-const ErrorMessage = styled.div`
-  color: crimson;
-  margin-bottom: 10px;
-`;
-
-const GoSIgnUp = styled.div`
-  margin-top: 70px;
-  font-size: 17px;
-  letter-spacing: 0px;
-  a {
-    text-decoration: underline;
-    color: crimson;
-  }
-`;
-
-const Close = styled.div`
-  font-size: 30px;
-  position: absolute;
-  right: 30px;
-  top: 30px;
-  cursor: pointer;
-`;
-
 export const Home = () => {
   useScrollTop();
 
@@ -391,31 +296,16 @@ export const Home = () => {
   console.log(resData);
   // console.log(cafData);
 
-  const [isVisable, setIsVisable] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-
-  const loginHandler = () => {};
-
-  const viewHandler = () => {
-    setIsVisable(true);
-  };
-
-  const closeHandler = () => {
-    setIsVisable(false);
-  };
+  const { register, handleSubmit } = useForm();
 
   const navi = useNavigate();
   const searchHandler = ({ keyword }) => {
     const keyResult = resData.filter(
       (res) => res.CON_KEYWORDS.includes(keyword) === true
     );
+
     console.log(keyResult);
-    // navi(`/detail/${keyResult[0].CON_UID}`);
+    navi(`/detail/${keyResult[0].CON_UID}`);
   };
 
   // split 사용
@@ -440,11 +330,6 @@ export const Home = () => {
             <FaMobileAlt />
             &nbsp;&nbsp;&nbsp;Get the App
           </button>
-
-          <User>
-            <li onClick={viewHandler}>Log in</li>
-            <li>Sign up</li>
-          </User>
         </HeaderCon>
       </SHeader>
 
@@ -554,45 +439,6 @@ export const Home = () => {
           </ConWrap>
         </Container>
       </Collection>
-
-      {/* -------------------------------------------------------------------------------------------------- */}
-      {/* 로그인 */}
-      <JustForDisplay $canLook={isVisable ? "display" : "none"}>
-        <LoginContainer>
-          <LoginForm onSubmit={handleSubmit(loginHandler)}>
-            <h3>Login</h3>
-            <Close onClick={closeHandler}>
-              <IoClose />
-            </Close>
-
-            <input
-              {...register("username", {
-                required: "아이디를 입력해주세요",
-              })}
-              type="text"
-              placeholder="id"
-            />
-            <ErrorMessage>{errors?.username?.message}</ErrorMessage>
-
-            <input
-              {...register("password", {
-                required: "비밀번호를 입력해주세요",
-              })}
-              type="password"
-              placeholder="password"
-            />
-            <ErrorMessage>{errors?.password?.message}</ErrorMessage>
-
-            <button>Login</button>
-            <ErrorMessage style={{ textAlign: "center" }}></ErrorMessage>
-
-            <GoSIgnUp>Spoon 회원이 아닌가요? 지금 가입 하세요 😊</GoSIgnUp>
-          </LoginForm>
-        </LoginContainer>
-      </JustForDisplay>
-
-      {/* ---------------------------------------------------------------------------------------------------- */}
-      {/* 회원가입 */}
     </>
   );
 };

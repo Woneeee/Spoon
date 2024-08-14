@@ -4,7 +4,6 @@ import { Home } from "./pages/home/Home";
 import { Footer } from "./components/Footer";
 import { Detail } from "./pages/detail/Detail";
 import { PageNotFound } from "./pages/PageNotFound";
-import { Search } from "./pages/search/Search";
 import { ScrollTopBtn } from "./components/ScrollTopBtn";
 import { Dining } from "./pages/dining&cafe/Dining";
 import { Cafe } from "./pages/dining&cafe/Cafe";
@@ -24,7 +23,6 @@ const Router = () => {
         <Route path={routes.detail} element={<Detail />} />
         <Route path={routes.cafedetail} element={<CafeDetail />} />
         <Route path={routes.hotdetail} element={<HotDetail />} />
-        <Route path={routes.search} element={<Search />} />
         <Route path={"/*"} element={<PageNotFound />} />
       </Routes>
       <Footer />

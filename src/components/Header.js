@@ -80,17 +80,6 @@ const SearchIcon = styled.div`
   font-size: 20px;
 `;
 
-const User = styled.ul`
-  display: flex;
-  li {
-    font-size: 18px;
-    cursor: pointer;
-    &:nth-child(2) {
-      margin-left: 30px;
-    }
-  }
-`;
-
 export const Header = () => {
   const { register, handleSubmit } = useForm();
 
@@ -143,11 +132,6 @@ export const Header = () => {
 
           <button>Search</button>
         </Form>
-
-        <User>
-          <li>Log in</li>
-          <li>Sign up</li>
-        </User>
       </Wrap>
     </Container>
   );
