@@ -122,7 +122,8 @@ export const StoMenu = styled.div`
   }
   p {
     margin-top: 20px;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     opacity: 0.8;
     line-height: 23px;
   }
@@ -219,6 +220,7 @@ export const StoDirec = styled.div`
   border: 1px solid #55555510;
   box-shadow: rgba(28, 28, 28, 0.08) 0px 2px 8px;
   @media screen and (max-width: 510px) {
+    width: 100%;
     position: static;
   }
 `;
@@ -265,7 +267,7 @@ export const JustForDisplay = styled.div`
 export const MoreBg = styled.div`
   width: 100%;
   height: 100%;
-  background-color: #00000090;
+  background-color: rgba(28, 28, 28, 0.6);
   backdrop-filter: blur(2px);
   position: fixed;
   top: 0;
@@ -295,6 +297,10 @@ export const MoreCon = styled.div`
     letter-spacing: 0.2px;
     line-height: 25px;
   }
+  @media screen and (max-width: 510px) {
+    width: 300px;
+    height: 300px;
+  }
 `;
 
 export const Close = styled.div`
@@ -302,4 +308,9 @@ export const Close = styled.div`
   margin-bottom: 5%;
   cursor: pointer;
   margin: 90px auto;
+  @media screen and (max-width: 510px) {
+    margin: 120px auto;
+    margin-bottom: 40px;
+    font-size: 60px;
+  }
 `;

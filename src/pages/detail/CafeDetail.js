@@ -39,6 +39,7 @@ import { FaLocationDot } from "react-icons/fa6";
 import { ImSpoonKnife } from "react-icons/im";
 import { KakaoMap } from "../../function/KakaoMap";
 import { IoCloseCircleOutline } from "react-icons/io5";
+import { Navigation } from "swiper/modules";
 
 export const CafeDetail = () => {
   useScrollTop();
@@ -125,7 +126,16 @@ export const CafeDetail = () => {
 
           {/* -------------------------------------------------------------------------------------------------- */}
 
-          <Swiper slidesPerView={2.5} className="swiper">
+          <Swiper
+            slidesPerView={2.5}
+            className="swiper"
+            modules={[Navigation]}
+            navigation
+            breakpoints={{
+              1100: { slidesPerView: 2.5 },
+              300: { slidesPerView: 1.2 },
+            }}
+          >
             <SwiperSlide className="slide">
               <img
                 src={IMG_BASE_URL + placeData.CON_IMGFILENAME}
