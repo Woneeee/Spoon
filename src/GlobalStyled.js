@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 
 export const spacing = {
-  side: "470px",
+  moside: "16px",
 };
 
 export const point = {

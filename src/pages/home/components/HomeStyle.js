@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import bg from "../../../img/d.jpg";
+import { spacing } from "../../../GlobalStyled";
 
 export const SHeader = styled.div`
   width: 100%;
@@ -10,6 +11,10 @@ export const SHeader = styled.div`
   top: 0;
   left: 0;
   z-index: 99;
+
+  @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
+  }
 `;
 
 export const HeaderCon = styled.div`
@@ -22,6 +27,10 @@ export const HeaderCon = styled.div`
     cursor: pointer;
     color: white;
     font-size: 16px;
+  }
+  @media screen and (max-width: 510px) {
+    max-width: 510px;
+    width: 100%;
   }
 `;
 
@@ -37,6 +46,9 @@ export const MainBanner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 510px) {
+    height: 850px;
+  }
 `;
 
 export const Bg = styled.div`
@@ -58,6 +70,14 @@ export const Brand = styled.div`
     text-align: center;
     margin-bottom: 30px;
   }
+  @media screen and (max-width: 510px) {
+    max-width: 400px;
+    width: 100%;
+    h2 {
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+  }
 `;
 
 export const Discover = styled.div`
@@ -71,15 +91,22 @@ export const Discover = styled.div`
     letter-spacing: 0.6px;
     text-align: center;
   }
+  @media screen and (max-width: 510px) {
+    margin-bottom: 20px;
+    p {
+      font-size: 26px;
+      line-height: 35px;
+    }
+  }
 `;
 
 export const Form = styled.form`
-  all: unset;
+  /* all: unset; */ // form에다가는 unset 넣지 말기 이상해짐
   display: flex;
   align-items: center;
   width: 100%;
   height: 60px;
-  background-color: white;
+  /* background-color: white; */
   position: relative;
   border-radius: 12px;
   padding: 0 15px;
@@ -101,6 +128,17 @@ export const Form = styled.form`
       transition-duration: 0.3s;
     }
   }
+  @media screen and (max-width: 510px) {
+    width: 400px;
+    height: 100%;
+    flex-direction: column;
+    button {
+      position: static; // 기본값
+      width: 100%;
+      height: 45px;
+      border-radius: 5px;
+    }
+  }
 `;
 
 export const Location = styled.div`
@@ -109,6 +147,20 @@ export const Location = styled.div`
   input {
     all: unset;
     border-right: 1px solid rgba(17, 17, 17, 0.2);
+  }
+  @media screen and (max-width: 510px) {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin-right: 0;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    input {
+      width: 100%;
+      border: none;
+      /* background-color: beige; */
+      padding: 0 10px;
+    }
   }
 `;
 
@@ -124,6 +176,18 @@ export const Restaurant = styled.div`
     &::placeholder {
       font-size: 17px;
       font-style: italic;
+    }
+  }
+  @media screen and (max-width: 510px) {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    input {
+      width: 100%;
+      /* background-color: beige; */
+      padding: 0 10px;
     }
   }
 `;
@@ -158,6 +222,9 @@ export const Wrap = styled.ul`
       transition-duration: 0.5s;
     }
   }
+  @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
+  }
 `;
 
 export const ImgBox = styled.div`
@@ -181,6 +248,15 @@ export const Text = styled.div`
     letter-spacing: 0.3px;
     opacity: 0.7;
   }
+  @media screen and (max-width: 510px) {
+    padding: 10px;
+    h2 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 15px;
+    }
+  }
 `;
 
 export const Collection = styled.div`
@@ -203,6 +279,9 @@ export const Container = styled.div`
     opacity: 0.7;
     letter-spacing: 0.3px;
   }
+  @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
+  }
 `;
 
 export const ConWrap = styled.ul`
@@ -221,6 +300,11 @@ export const ConWrap = styled.ul`
       bottom: 15px;
       color: white;
       letter-spacing: 0.3px;
+    }
+  }
+  @media screen and (max-width: 510px) {
+    li {
+      width: 100%;
     }
   }
 `;
