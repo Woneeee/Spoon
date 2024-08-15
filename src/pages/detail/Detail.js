@@ -138,16 +138,16 @@ export const Detail = () => {
             navigation
             breakpoints={{
               1100: { slidesPerView: 2.5 },
-              300: { slidesPerView: 1.2 },
+              300: { slidesPerView: 1.1 },
             }}
           >
-            <SwiperSlide className="slide">
+            <SwiperSlide>
               <img
                 src={IMG_BASE_URL + placeData.CON_IMGFILENAME}
                 alt={placeData.CON_TITLE}
               />
             </SwiperSlide>
-            <SwiperSlide className="slide">
+            <SwiperSlide>
               {placeData.CON_CONTENT.includes("/upload") === true ? (
                 <img
                   src={`

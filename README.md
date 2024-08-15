@@ -9,6 +9,7 @@
 - [x] react-hook-form
 - [x] react-spinners
 - [x] swiper
+- [x] gh-pages
 
 1. 위에 주소에 username password 뜨는이유
 2. 회원가입으로 넘어가는법

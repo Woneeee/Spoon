@@ -109,7 +109,7 @@ export const HotDetail = () => {
             navigation
             breakpoints={{
               1100: { slidesPerView: 2.5 },
-              300: { slidesPerView: 1.2 },
+              300: { slidesPerView: 1.1 },
             }}
           >
             <SwiperSlide className="slide">
