@@ -4,7 +4,6 @@ export const Section = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  position: relative;
   /* background-color: pink; */
 `;
 
@@ -254,7 +253,7 @@ export const MoreBg = styled.div`
   height: 100%;
   background-color: #00000090;
   backdrop-filter: blur(2px);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99;
