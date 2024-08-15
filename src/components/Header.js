@@ -36,6 +36,7 @@ const Logo = styled.div`
   @media screen and (max-width: 510px) {
     font-size: 30px;
     margin-bottom: 25px;
+    width: 121px;
   }
 `;
 
@@ -81,12 +82,16 @@ const Form = styled.form`
     height: 53px;
     .loc {
       width: 20%;
+      font-size: 14px;
     }
     .sort {
-      width: 80%;
+      width: 60%;
+      &::placeholder {
+        font-size: 14px;
+      }
     }
     button {
-      display: none;
+      font-size: 14px;
     }
   }
 `;
@@ -95,12 +100,20 @@ const LocIcon = styled.div`
   margin-left: 10px;
   margin-right: 15px;
   font-size: 20px;
+  @media screen and (max-width: 510px) {
+    margin-left: 5px;
+    margin-right: 13px;
+  }
 `;
 
 const SearchIcon = styled.div`
   margin-left: 18px;
   margin-right: 15px;
   font-size: 20px;
+  @media screen and (max-width: 510px) {
+    margin-left: 13px;
+    margin-right: 13px;
+  }
 `;
 
 export const Header = () => {
@@ -182,7 +195,7 @@ export const Header = () => {
             placeholder="키워드를 입력해주세요..."
           />
 
-          <button>Search</button>
+          <button>입력</button>
         </Form>
       </Wrap>
     </Container>
