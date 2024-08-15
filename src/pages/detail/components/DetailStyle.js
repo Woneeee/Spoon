@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { spacing } from "../../../GlobalStyled";
 
 export const Section = styled.div`
   width: 100%;
@@ -15,12 +16,20 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 650px 1fr;
   column-gap: 50px;
+  @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
+    display: block;
+  }
 `;
 
 export const StoWrap = styled.div`
   /* height: 1200px; */
   /* background-color: beige; */
   margin: 30px 0 200px 0;
+  @media screen and (max-width: 510px) {
+    margin: 15px 0 100px 0;
+    width: 100%;
+  }
 `;
 
 export const StoInfo = styled.div`
@@ -97,7 +106,8 @@ export const StoIntro = styled.div`
   }
   p {
     margin-top: 20px;
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
     opacity: 0.8;
     line-height: 23px;
   }
@@ -157,6 +167,7 @@ export const Con = styled.div`
   margin-top: 30px;
   /* background-color: pink; */
   display: flex;
+  align-items: center;
   position: relative;
   input {
     all: unset;
@@ -207,6 +218,9 @@ export const StoDirec = styled.div`
   border-radius: 10px;
   border: 1px solid #55555510;
   box-shadow: rgba(28, 28, 28, 0.08) 0px 2px 8px;
+  @media screen and (max-width: 510px) {
+    position: static;
+  }
 `;
 
 export const Call = styled.div`

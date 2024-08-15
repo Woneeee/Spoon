@@ -150,9 +150,10 @@ export const DinWrap = styled.div`
     font-weight: 500;
   }
   @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
     h2 {
-      padding: ${spacing.moside};
       line-height: 38px;
+      font-size: 25px;
     }
   }
 `;
@@ -166,7 +167,8 @@ export const ResWrap = styled.div`
   row-gap: 45px;
   @media screen and (max-width: 510px) {
     grid-template-columns: repeat(1, 1fr);
-    row-gap: 35px;
+    row-gap: 50px;
+    margin-top: 20px;
   }
 `;
 
@@ -183,6 +185,14 @@ export const Con = styled.div`
     border: 1px solid #66666620;
     box-shadow: rgba(28, 28, 28, 0.08) 0px 2px 10px;
   }
+  @media screen and (max-width: 510px) {
+    padding: 0;
+    height: 330px;
+    &:hover {
+      border: none;
+      box-shadow: none;
+    }
+  }
 `;
 
 export const Img = styled.div`
@@ -191,6 +201,11 @@ export const Img = styled.div`
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+  }
+  @media screen and (max-width: 510px) {
+    img {
+      border-radius: 12px;
+    }
   }
 `;
 

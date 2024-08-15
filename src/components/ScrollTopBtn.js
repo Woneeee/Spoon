@@ -12,6 +12,11 @@ const TopBtn = styled.div`
   color: ${point.color};
   cursor: pointer;
   opacity: ${(props) => props.$view};
+  @media screen and (max-width: 510px) {
+    right: 15px;
+    bottom: 15px;
+    font-size: 45px;
+  }
 `;
 
 export const ScrollTopBtn = () => {

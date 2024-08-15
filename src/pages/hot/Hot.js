@@ -6,6 +6,7 @@ import { useScrollTop } from "../../lib/useScrollTop";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Title } from "../../components/Title";
+import { spacing } from "../../GlobalStyled";
 
 const BanContainer = styled.div`
   width: 100%;
@@ -22,12 +23,15 @@ const BanWrap = styled.div`
   background: url(${(props) => props.$bgUrl}) no-repeat center / cover;
   position: relative;
   border-radius: 10px;
+  @media screen and (max-width: 510px) {
+    height: 430px;
+  }
 `;
 
 const Text = styled.div`
   width: 50%;
   height: 60%;
-  background-color: rgba(28, 28, 28, 0.86);
+  background-color: rgba(28, 28, 28, 0.8);
   backdrop-filter: blur(2px);
   position: absolute;
   bottom: 0;
@@ -51,12 +55,32 @@ const Text = styled.div`
     font-weight: 300;
     opacity: 0.8;
   }
+  @media screen and (max-width: 510px) {
+    width: 74%;
+    height: 43%;
+    padding: ${spacing.moside} 10px;
+    h5 {
+      font-size: 15px;
+    }
+    p {
+      font-size: 14px;
+      margin-top: 10px;
+      line-height: 19px;
+    }
+    span {
+      margin-top: 15px;
+    }
+  }
 `;
 
 const STitle = styled.div`
   margin-top: 10px;
   font-size: 40px;
   font-weight: 500;
+  @media screen and (max-width: 510px) {
+    font-size: 35px;
+    margin-top: 7px;
+  }
 `;
 
 const HotContainer = styled.div`
@@ -74,6 +98,11 @@ const HotWrap = styled.div`
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   row-gap: 20px;
+  @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 12px;
+  }
 `;
 
 const Con = styled.div`

@@ -135,6 +135,10 @@ export const Detail = () => {
             className="swiper"
             modules={[Navigation]}
             navigation
+            breakpoints={{
+              1100: { slidesPerView: 2.5 },
+              300: { slidesPerView: 1.2 },
+            }}
           >
             <SwiperSlide className="slide">
               <img

@@ -1,6 +1,9 @@
 .swiper {
   width: 100%;
   margin-top: 50px;
+  @media screen and (max-width: 510px) {
+    margin-top: 20px;
+  }
 }
 
 .slide {
@@ -8,5 +11,8 @@
   img {
     height: 100%;
     object-fit: cover;
+  }
+  @media screen and (max-width: 510px) {
+    height: 250px;
   }
 }
