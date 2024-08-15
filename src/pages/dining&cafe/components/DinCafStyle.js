@@ -1,11 +1,15 @@
 import styled from "styled-components";
-import { point } from "../../../GlobalStyled";
+import { point, spacing } from "../../../GlobalStyled";
+import { BiSpaceBar } from "react-icons/bi";
 
 export const MenuCon = styled.section`
   margin-top: 30px;
   width: 100%;
   display: flex;
   justify-content: center;
+  @media screen and (max-width: 510px) {
+    margin-top: 0px;
+  }
 `;
 
 export const MenuWrap = styled.ul`
@@ -24,6 +28,11 @@ export const MenuWrap = styled.ul`
   }
   .colorOn {
     border-bottom: 3px solid ${point.deepcolor};
+  }
+  @media screen and (max-width: 510px) {
+    li {
+      padding: ${spacing.moside};
+    }
   }
 `;
 
@@ -72,6 +81,13 @@ export const CollWrap = styled.div`
     font-size: 18px;
     letter-spacing: 0.3px;
   }
+  @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
+    p {
+      margin-top: 30px;
+      line-height: 22px;
+    }
+  }
 `;
 
 export const CollCon = styled.ul`
@@ -95,6 +111,11 @@ export const CollCon = styled.ul`
       bottom: 15px;
       color: white;
       letter-spacing: 0.3px;
+    }
+  }
+  @media screen and (max-width: 510px) {
+    li {
+      width: 100%;
     }
   }
 `;
@@ -128,6 +149,12 @@ export const DinWrap = styled.div`
     font-size: 30px;
     font-weight: 500;
   }
+  @media screen and (max-width: 510px) {
+    h2 {
+      padding: ${spacing.moside};
+      line-height: 38px;
+    }
+  }
 `;
 
 export const ResWrap = styled.div`
@@ -137,6 +164,10 @@ export const ResWrap = styled.div`
   grid-template-columns: repeat(3, 1fr);
   column-gap: 25px;
   row-gap: 45px;
+  @media screen and (max-width: 510px) {
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 35px;
+  }
 `;
 
 export const Con = styled.div`

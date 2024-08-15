@@ -11,10 +11,6 @@ export const SHeader = styled.div`
   top: 0;
   left: 0;
   z-index: 99;
-
-  @media screen and (max-width: 510px) {
-    padding: ${spacing.moside};
-  }
 `;
 
 export const HeaderCon = styled.div`
@@ -29,8 +25,7 @@ export const HeaderCon = styled.div`
     font-size: 16px;
   }
   @media screen and (max-width: 510px) {
-    max-width: 510px;
-    width: 100%;
+    padding: ${spacing.moside};
   }
 `;
 
@@ -73,6 +68,10 @@ export const Brand = styled.div`
   @media screen and (max-width: 510px) {
     max-width: 400px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h2 {
       font-size: 50px;
       margin-bottom: 20px;
@@ -106,7 +105,7 @@ export const Form = styled.form`
   align-items: center;
   width: 100%;
   height: 60px;
-  /* background-color: white; */
+  background-color: white;
   position: relative;
   border-radius: 12px;
   padding: 0 15px;
@@ -129,9 +128,12 @@ export const Form = styled.form`
     }
   }
   @media screen and (max-width: 510px) {
-    width: 400px;
+    max-width: 400px;
+    width: 90%;
     height: 100%;
     flex-direction: column;
+    background-color: transparent;
+    padding: 0;
     button {
       position: static; // 기본값
       width: 100%;
@@ -252,9 +254,11 @@ export const Text = styled.div`
     padding: 10px;
     h2 {
       font-size: 18px;
+      margin-bottom: 8px;
     }
     p {
       font-size: 15px;
+      line-height: 17px;
     }
   }
 `;
@@ -281,6 +285,14 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 510px) {
     padding: ${spacing.moside};
+    h2 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 20px;
+      margin-bottom: 30px;
+    }
   }
 `;
 

@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import styled from "styled-components";
-import { point } from "../GlobalStyled";
+import { point, spacing } from "../GlobalStyled";
 import { TbBowlSpoonFilled } from "react-icons/tb";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -23,12 +23,20 @@ const Wrap = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media screen and (max-width: 510px) {
+    padding: ${spacing.moside};
+    display: block;
+  }
 `;
 
 const Logo = styled.div`
   font-size: 35px;
   font-weight: 800;
   letter-spacing: -2px;
+  @media screen and (max-width: 510px) {
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
 `;
 
 const Form = styled.form`
@@ -66,6 +74,19 @@ const Form = styled.form`
     &:hover {
       background-color: #9cc05c;
       transition-duration: 0.3s;
+    }
+  }
+  @media screen and (max-width: 510px) {
+    width: 100%;
+    height: 53px;
+    .loc {
+      width: 20%;
+    }
+    .sort {
+      width: 80%;
+    }
+    button {
+      display: none;
     }
   }
 `;

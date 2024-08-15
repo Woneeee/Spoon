@@ -7,6 +7,7 @@ const TopBtn = styled.div`
   position: fixed;
   right: 30px;
   bottom: 30px;
+  z-index: 99;
   font-size: 70px;
   color: ${point.color};
   cursor: pointer;
