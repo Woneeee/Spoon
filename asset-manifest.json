@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Spoon/static/css/main.fa42d146.css",
-    "main.js": "/Spoon/static/js/main.ace78955.js",
+    "main.js": "/Spoon/static/js/main.aa3596de.js",
     "static/media/d.jpg": "/Spoon/static/media/d.364270f4a66642b5703f.jpg",
     "index.html": "/Spoon/index.html",
     "main.fa42d146.css.map": "/Spoon/static/css/main.fa42d146.css.map",
-    "main.ace78955.js.map": "/Spoon/static/js/main.ace78955.js.map"
+    "main.aa3596de.js.map": "/Spoon/static/js/main.aa3596de.js.map"
   },
   "entrypoints": [
     "static/css/main.fa42d146.css",
-    "static/js/main.ace78955.js"
+    "static/js/main.aa3596de.js"
   ]
 }
