@@ -30,6 +30,7 @@ import {
 import { FaLocationDot } from "react-icons/fa6";
 import { ImSpoonKnife } from "react-icons/im";
 import { KakaoMap } from "../../function/KakaoMap";
+import noImg from "../../img/Noimg.jpg";
 
 export const HotDetail = () => {
   useScrollTop();
@@ -118,23 +119,31 @@ export const HotDetail = () => {
               />
             </SwiperSlide>
             <SwiperSlide className="slide">
-              <img
-                src={`
+              {placeData.CON_CONTENT.includes("/upload") === true ? (
+                <img
+                  src={`
                   ${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
-                  firtImgSIdx,
-                  firtImgEIdx
-                )}jpg`}
-                alt={placeData.CON_TITLE}
-              />
+                    firtImgSIdx,
+                    firtImgEIdx
+                  )}jpg`}
+                  alt={placeData.CON_TITLE}
+                />
+              ) : (
+                <img src={noImg} alt="no_img" />
+              )}
             </SwiperSlide>
             <SwiperSlide className="slide">
-              <img
-                src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
-                  secImgSIdx,
-                  secImgEIdx
-                )}jpg`}
-                alt={placeData.CON_TITLE}
-              />
+              {placeData.CON_CONTENT.includes("/upload") === true ? (
+                <img
+                  src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
+                    secImgSIdx,
+                    secImgEIdx
+                  )}jpg`}
+                  alt={placeData.CON_TITLE}
+                />
+              ) : (
+                <img src={noImg} alt="no_img" />
+              )}
             </SwiperSlide>
           </Swiper>
 
@@ -205,7 +214,7 @@ export const HotDetail = () => {
                 <HomePage>
                   <h2>HomePage</h2>
 
-                  <a href={placeData.LINKURL}>{placeData.LINKURL}</a>
+                  <a href={`https://${placeData.LINKURL}`}>바로가기🚶‍➡️</a>
                 </HomePage>
               </StoDirec>
             </Container>

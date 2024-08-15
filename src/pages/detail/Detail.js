@@ -41,6 +41,7 @@ import {
   MoreCon,
   Close,
 } from "../detail/components/DetailStyle";
+import noImg from "../../img/Noimg.jpg";
 
 export const Detail = () => {
   useScrollTop();
@@ -147,23 +148,31 @@ export const Detail = () => {
               />
             </SwiperSlide>
             <SwiperSlide className="slide">
-              <img
-                src={`
+              {placeData.CON_CONTENT.includes("/upload") === true ? (
+                <img
+                  src={`
                   ${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
-                  firtImgSIdx,
-                  firtImgEIdx
-                )}jpg`}
-                alt={placeData.CON_TITLE}
-              />
+                    firtImgSIdx,
+                    firtImgEIdx
+                  )}jpg`}
+                  alt={placeData.CON_TITLE}
+                />
+              ) : (
+                <img src={noImg} alt="no_img" />
+              )}
             </SwiperSlide>
             <SwiperSlide className="slide">
-              <img
-                src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
-                  secImgSIdx,
-                  secImgEIdx
-                )}jpg`}
-                alt={placeData.CON_TITLE}
-              />
+              {placeData.CON_CONTENT.includes("/upload") === true ? (
+                <img
+                  src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
+                    secImgSIdx,
+                    secImgEIdx
+                  )}jpg`}
+                  alt={placeData.CON_TITLE}
+                />
+              ) : (
+                <img src={noImg} alt="no_img" />
+              )}
             </SwiperSlide>
           </Swiper>
 

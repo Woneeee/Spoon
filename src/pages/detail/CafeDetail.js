@@ -40,6 +40,7 @@ import { ImSpoonKnife } from "react-icons/im";
 import { KakaoMap } from "../../function/KakaoMap";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { Navigation } from "swiper/modules";
+import noImg from "../../img/Noimg.jpg";
 
 export const CafeDetail = () => {
   useScrollTop();
@@ -143,23 +144,33 @@ export const CafeDetail = () => {
               />
             </SwiperSlide>
             <SwiperSlide className="slide">
-              <img
-                src={`
+              {placeData.CON_CONTENT.includes("/upload") === true ? (
+                <img
+                  src={`
                   ${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
-                  firtImgSIdx,
-                  firtImgEIdx
-                )}jpg`}
-                alt={placeData.CON_TITLE}
-              />
+                    firtImgSIdx,
+                    firtImgEIdx
+                  )}jpg`}
+                  alt={placeData.CON_TITLE}
+                />
+              ) : (
+                <img src={noImg} alt="no_img" />
+              )}
             </SwiperSlide>
             <SwiperSlide className="slide">
-              <img
-                src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
-                  secImgSIdx,
-                  secImgEIdx
-                )}jpg`}
-                alt={placeData.CON_TITLE}
-              />
+              <SwiperSlide className="slide">
+                {placeData.CON_CONTENT.includes("/upload") === true ? (
+                  <img
+                    src={`${IMG_WWW_URL}${placeData.CON_CONTENT.slice(
+                      secImgSIdx,
+                      secImgEIdx
+                    )}jpg`}
+                    alt={placeData.CON_TITLE}
+                  />
+                ) : (
+                  <img src={noImg} alt="no_img" />
+                )}
+              </SwiperSlide>
             </SwiperSlide>
           </Swiper>
 
