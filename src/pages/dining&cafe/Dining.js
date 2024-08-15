@@ -112,7 +112,7 @@ export const Dining = () => {
       ) : (
         <DinContainer>
           <DinWrap>
-            <h2>Trending dining restaurants in South Korea Gyeongju 🍽️</h2>
+            <h2>다이닝 레스토랑 🍽️</h2>
 
             <ResWrap>
               {resData.map((data) => (
