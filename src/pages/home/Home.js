@@ -67,7 +67,7 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(resData);
+  // console.log(resData);
   // console.log(cafData);
 
   const navi = useNavigate();
@@ -75,12 +75,14 @@ export const Home = () => {
     const keyResult = resData.filter(
       (res) => res.CON_KEYWORDS.includes(keyword) === true
     );
-
+    const cafKeyResult = cafData.filter(
+      (caf) => caf.CON_KEYWORDS.includes(keyword) === true
+    );
     // console.log(keyResult);
+    // console.log(cafKeyResult);
+    const keyAllResult = keyResult.concat(cafKeyResult);
 
-    keyResult.length !== 0
-      ? navi(`/detail/${keyResult[0].CON_UID}`)
-      : navi("/");
+    keyAllResult.length !== 0 ? navi(`/searchresult/${keyword}`) : navi("/");
   };
 
   return (

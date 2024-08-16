@@ -4,7 +4,7 @@ import { point, spacing } from "../GlobalStyled";
 import { TbBowlSpoonFilled } from "react-icons/tb";
 import { MdLocationOn } from "react-icons/md";
 import { AiOutlineSearch } from "react-icons/ai";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { routes } from "../routes";
 import { useEffect, useState } from "react";
 import { cafe, restaurant } from "../api";
@@ -149,16 +149,21 @@ export const Header = () => {
   }, []);
 
   const navi = useNavigate();
+  const { pathname } = useLocation();
   const searchHandler = ({ keyword }) => {
     const keyResult = resData.filter(
       (res) => res.CON_KEYWORDS.includes(keyword) === true
     );
-
+    const cafKeyResult = cafData.filter(
+      (caf) => caf.CON_KEYWORDS.includes(keyword) === true
+    );
     // console.log(keyResult);
+    // console.log(cafKeyResult);
+    const keyAllResult = keyResult.concat(cafKeyResult);
 
-    keyResult.length !== 0
-      ? navi(`/detail/${keyResult[0].CON_UID}`)
-      : navi("/dining");
+    keyAllResult.length !== 0
+      ? navi(`/searchresult/${keyword}`)
+      : navi({ pathname });
   };
 
   return (
