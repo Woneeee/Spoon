@@ -133,7 +133,7 @@ export const SearchResult = () => {
         console.log(error);
       }
     })();
-  }, []);
+  }, [keyword]);
 
   //   console.log(resData);
   // console.log(cafData);
