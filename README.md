@@ -24,3 +24,24 @@
 | 제목      | 내용                   |
 | --------- | ---------------------- |
 | 8/4, 5, 6 | 레퍼런스찾기, api 찾기 |
+| 8/7       | 전체적인 컴포넌트 구성 |
+| 8/8       | 헤더, 푸터, 검색 구성  |
+| 8/9       | 홈 구성                |
+| 8/10      | 다이닝, 카페 구성      |
+| 8/11      | 콜렉션 구성            |
+| 8/12      | 디테일 구성            |
+| 8/13      | 검색기능 구성          |
+| 8/14      | 로그인, 회원가입       |
+| 8/15      | 유지보수 및 배포       |
+
+## 프로젝트 소개
+
+- Github Url - https://github.com/Woneeee/Spoon
+- Project Url - https://woneeee.github.io/Spoon/#
+
+- 공공데이터 Open Api Url
+  - https://www.data.go.kr/data/15114461/openapi.do
+  - https://www.data.go.kr/data/15114465/openapi.do
+  - https://www.data.go.kr/data/15114467/openapi.do
+- 카카오맵 Api Url
+  - https://apis.map.kakao.com/
