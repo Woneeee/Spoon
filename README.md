@@ -1,15 +1,26 @@
-## 설치 목록
+# 🥄Spoon | Fine Restaurant Finder App
 
-- [x] react-router-dom
-- [x] styled-components
-- [x] react-helmet-async
-- [x] node-fetch 2.7v
-- [x] styled-reset
-- [x] Google-Fonts
-- [x] react-hook-form
-- [x] react-spinners
-- [x] swiper
-- [x] gh-pages
+## 목적성
 
-1. 위에 주소에 username password 뜨는이유
-2. 회원가입으로 넘어가는법
+- 경주의 맛있는 레스토랑 및 카페를 찾아주는 Fine Restaurant Finder App 입니다.
+- 이 앱에서는 유저가 원하는 레스트랑 이름 또는 먹고싶은 요리를 검색하여 그에 해당하는 레스토랑의 정보를 볼 수 있습니다.
+- 레스토랑 상세 페이지에서는 업체의 각종 세부적인 특징과 함께 식당에 대한 리뷰를 작성할 수 있는 영역이 존재합니다. 또한 근처 레스토랑을 추천해주며 사용자에게 더 많은 선택의 기회를 제공합니다.
+- native app으로서 유저가 정보를 찾는 동시에 활동을 할 수 있게 만들고 재미있는 UI 를 구현하여 ‘Spoon’ 이라는 맛집 탐색 어플을 만들고자 합니다.
+
+## Stack
+
+- React
+- html / css
+- JS
+- node.js
+- git / github
+
+## 개발 기간
+
+- 2024.8.4~ 2024.8.15
+
+## 계획표
+
+| 제목      | 내용                   |
+| --------- | ---------------------- |
+| 8/4, 5, 6 | 레퍼런스찾기, api 찾기 |
