@@ -47,10 +47,10 @@
   - https://apis.map.kakao.com/
 
 <div display="flex" >
-  <img src="./src/mo_spoon/home1.jpg" width="100px" />
-  <img src="./src/mo_spoon/home2.jpg" width="100px" />
-  <img src="./src/mo_spoon/dining.jpg" width="100px" />
-  <img src="./src/mo_spoon/detail1.jpg" width="100px" />
-  <img src="./src/mo_spoon/detail2.jpg" width="100px" />
-  <img src="./src/mo_spoon/detail3.jpg" width="100px" />
+  <img src="./src/mo_spoon/home1.jpg" width="150px" />
+  <img src="./src/mo_spoon/home2.jpg" width="150px" />
+  <img src="./src/mo_spoon/dining.jpg" width="150px" />
+  <img src="./src/mo_spoon/detail1.jpg" width="150px" />
+  <img src="./src/mo_spoon/detail2.jpg" width="150px" />
+  <img src="./src/mo_spoon/detail3.jpg" width="150px" />
 </div >
