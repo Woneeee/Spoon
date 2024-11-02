@@ -9,6 +9,10 @@
 
 ## Stack
 
+<div display="flex">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/800px-Unofficial_JavaScript_logo_2.svg.png" width="60px" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSg1MndL-Xp1JcnqaB0YOqTp6zDjrwYyGKsPA&s" width="60px" /> 
+</div>
 - React
 - html / css
 - JS
@@ -47,10 +51,12 @@
   - https://apis.map.kakao.com/
 
 <div display="flex" >
-  <img src="./src/mo_spoon/home1.jpg" width="150px" />
-  <img src="./src/mo_spoon/home2.jpg" width="150px" />
-  <img src="./src/mo_spoon/dining.jpg" width="150px" />
-  <img src="./src/mo_spoon/detail1.jpg" width="150px" />
-  <img src="./src/mo_spoon/detail2.jpg" width="150px" />
-  <img src="./src/mo_spoon/detail3.jpg" width="150px" />
+  <img src="./src/mo_spoon/home1.jpg" width="180px" />
+  <img src="./src/mo_spoon/home2.jpg" width="180px" />
+  <img src="./src/mo_spoon/dining.jpg" width="180px" />
+  <img src="./src/mo_spoon/detail1.jpg" width="180px" />
+  <img src="./src/mo_spoon/detail2.jpg" width="180px" />
+  <img src="./src/mo_spoon/detail3.jpg" width="180px" />
 </div >
+
+## 프로젝트를 하면서 느낀점
